@@ -4,7 +4,7 @@ select db_id();
 sp_who;
 sp_lock null,null,1;
 sp_helpdb;
-sp_help monWaitEventInfo;
+sp_help sysdevices;
 sp_helpindex ;
 sp_helprotect SIMON;
 sp_spaceusage 'display','tranlog','syslogs';
@@ -64,3 +64,14 @@ where T2.Command in ('CHECKPOINT SLEEP','HK WASH') and T1.Waits > 100 or T1.Wait
 select EngineNumber, HkgcMaxQSize, HkgcPendingItems, HkgcHWMItems, HkgcOverflows from master..monEngine; -- pre engine
 select top 25 DBName, ObjectName, IndexID, LogicalReads, PhysicalWrites, PagesWritten, RowsInserted, RowsDeleted, RowsUpdated  HkgcRequests, HkgcPending, HkgcOverflows 
 from master..monOpenObjectActivity order by HkgcPending desc; -- per table
+
+-- GET IO INFORMATION
+select sysU.lstart, sysU.size, sysU.vstart, sysU.segmap, sysU.vdevno, sysDv.name
+from master..sysdatabases sysD join master..sysusages sysU on sysD.dbid = sysU.dbid join master..sysdevices sysDv on sysU.vdevno = sysDv.vdevno
+where sysD.name = 'BBVA_CONVERSION_DEBUG' order by sysU.lstart;
+
+-- GET TABLE SIZE
+select O.name, O.loginame, space_used_kb=(used_pages(db_id(),O.id)*4) --space_used_kb contains space used by data and index
+from sysobjects O
+where O.type = 'U'
+order by space_used_kb desc;

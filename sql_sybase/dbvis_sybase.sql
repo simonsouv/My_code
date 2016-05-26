@@ -1,7 +1,8 @@
 select @@version;
+select @@spid;
 select db_name();
 sp_help RC_PL_31_REP;
-sp_spaceused BSKVO_DBF;
+sp_spaceused TRN_HDR_DBF, 1;
 sp_helpindex RT_INDEX_DBF;
 sp_helprotect TRN_HDR_DBF;
 sp_helpdb;
@@ -36,9 +37,6 @@ where dyn.M_IDJOB = 1306763; -- list of remaining deals to be completed per batc
 
 select M_IDJOB, M_DATEGEN, M_DELETED, M_TAG_DATA from DYN_AUDIT_REP where M_DELETED='N' and M_TAG_DATA='CPLIRD'; -- get information about the audit of batch of feeders execution
 
-select count(1) from RC_PL_31_REP where M_TRN_FMLY='CURR' and M_MX_REF_JOB=237777 and M_NBZ>0;
-select M_NB,M_CONTRACT from TRN_HDR_DBF where M_NB in (6764800, 6743362);
-select * from RC_PL_31_REP where M_NBZ = 6743362;
 
 --2.11 queries
 select * from TRN_USRD_DBF where M_LABEL like '%REALTIME%';
