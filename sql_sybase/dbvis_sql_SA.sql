@@ -40,7 +40,7 @@ from master..monProcess p join master..monProcessActivity pa on p.SPID = pa.SPID
 where p.SPID=522;
 
 -- get System wide Waits events
-select T2.Description, T1.* from master..monSysWaits T1 join master..monWaitEventInfo T2 on T1.WaitEventID = T2.WaitEventID order by WaitTime desc;
+select top 20 T2.Description, T1.* from master..monSysWaits T1 join master..monWaitEventInfo T2 on T1.WaitEventID = T2.WaitEventID order by WaitTime desc;
 
 -- query to view the activity of the checkpoint and HKW processes
 select T2.Command,T2.Priority,T1.CPUTime, T1.WaitTime, T1.PhysicalWrites,T1.PagesWritten, convert(numeric(10,0),T1.PagesWritten)/convert(numeric(10,0),T1.PhysicalWrites) as Avg_Pages_per_Writes
