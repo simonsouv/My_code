@@ -1,6 +1,7 @@
 select @@version;
 select db_name();
 select db_id();
+select * from syslisteners;
 sp_who;
 sp_lock null,null,1;
 sp_helpdb;
@@ -66,9 +67,14 @@ select top 25 DBName, ObjectName, IndexID, LogicalReads, PhysicalWrites, PagesWr
 from master..monOpenObjectActivity order by HkgcPending desc; -- per table
 
 -- GET IO INFORMATION
-select sysU.lstart, sysU.size, sysU.vstart, sysU.segmap, sysU.vdevno, sysDv.name
-from master..sysdatabases sysD join master..sysusages sysU on sysD.dbid = sysU.dbid join master..sysdevices sysDv on sysU.vdevno = sysDv.vdevno
+select sysDv.name, sysU.lstart, sysU.size, sysU.vstart, sysU.segmap, sysU.vdevno, monDevI.Reads, monDevI.APFReads, monDevI.Writes, monDevI.IOTime--, monIO.IOs, monIO.IOTime, monIO.IOType
+from master..sysdatabases sysD join master..sysusages sysU on sysD.dbid = sysU.dbid 
+                               join master..sysdevices sysDv on sysU.vdevno = sysDv.vdevno 
+                               join master..monDeviceSpaceUsage monDevS on sysDv.vdevno = monDevS.VDevNo
+                               join master..monDeviceIO monDevI on monDevS.LogicalName = monDevI.LogicalName
+                               --join master..monIOQueue monIO on monDevI.LogicalName = monIO.LogicalName
 where sysD.name = 'BBVA_CONVERSION_DEBUG' order by sysU.lstart;
+select * from master..monIOQueue;
 
 -- GET TABLE SIZE
 select O.name, O.loginame, space_used_kb=(used_pages(db_id(),O.id)*4) --space_used_kb contains space used by data and index

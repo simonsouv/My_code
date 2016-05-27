@@ -37,6 +37,7 @@ where dyn.M_IDJOB = 1306763; -- list of remaining deals to be completed per batc
 
 select M_IDJOB, M_DATEGEN, M_DELETED, M_TAG_DATA from DYN_AUDIT_REP where M_DELETED='N' and M_TAG_DATA='CPLIRD'; -- get information about the audit of batch of feeders execution
 
+select * from MXODR_ASSEMBLY_LOG;
 
 --2.11 queries
 select * from TRN_USRD_DBF where M_LABEL like '%REALTIME%';
