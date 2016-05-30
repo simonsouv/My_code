@@ -67,16 +67,19 @@ select top 25 DBName, ObjectName, IndexID, LogicalReads, PhysicalWrites, PagesWr
 from master..monOpenObjectActivity order by HkgcPending desc; -- per table
 
 -- GET IO INFORMATION
-select sysDv.name, sysU.lstart, sysU.size, sysU.vstart, sysU.segmap, sysU.vdevno, monDevI.Reads, monDevI.APFReads, monDevI.Writes, monDevI.IOTime--, monIO.IOs, monIO.IOTime, monIO.IOType
+select sysDv.name, sysU.lstart, sysU.size, sysU.vstart, sysU.segmap, sysU.vdevno
 from master..sysdatabases sysD join master..sysusages sysU on sysD.dbid = sysU.dbid 
                                join master..sysdevices sysDv on sysU.vdevno = sysDv.vdevno 
                                join master..monDeviceSpaceUsage monDevS on sysDv.vdevno = monDevS.VDevNo
                                join master..monDeviceIO monDevI on monDevS.LogicalName = monDevI.LogicalName
-                               --join master..monIOQueue monIO on monDevI.LogicalName = monIO.LogicalName
-where sysD.name = 'BBVA_CONVERSION_DEBUG' order by sysU.lstart;
-select * from master..monIOQueue;
+where sysD.name = 'BBVA_CONVERSION_DEBUG' order by sysU.lstart; -- get database mapping
 
--- GET THE LOG SEMAPHORE CONTENTION
+select LogicalName, Reads, APFReads, ReadTime, convert(numeric(10,0),ReadTime)/(Reads + APFReads) "Read_ms", 
+       Writes, WriteTime, case Writes when 0 then 0 else convert(numeric(10,0),WriteTime)/Writes end "Writes_ms", DevSemaphoreRequests, DevSemaphoreWaits  
+         from master..monDeviceIO monIO join master..sysdevices dev on monIO.LogicalName = dev.name 
+         join (select distinct u.vdevno from master..sysusages u join master..sysdatabases d on d.dbid = u.dbid where d.name = 'BBVA_CONVERSION_DEBUG') dev_used  on dev.vdevno = dev_used.vdevno; --IO speed information
+         
+-- GET THE LOG SEMAPHORE
 select DBID, DBName, AppendLogRequests, AppendLogWaits, (convert(numeric(10,0),AppendLogWaits)/convert(numeric(10,0),AppendLogRequests))*100 as 'LogContention%'  
 from master..monOpenDatabases;
 
