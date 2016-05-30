@@ -8,7 +8,7 @@ sp_helprotect TRN_HDR_DBF;
 sp_helpdb;
 setuser 'guest';
 
-select name from sysobjects where name like '%VRS%'; --H399634_H1S
+select name from sysobjects where name like '%CFG%'; --H399634_H1S
 select * from sysusers where uid=2;
 select object_id('TRN_HDR_DBF');
 
@@ -37,7 +37,7 @@ where dyn.M_IDJOB = 1306763; -- list of remaining deals to be completed per batc
 
 select M_IDJOB, M_DATEGEN, M_DELETED, M_TAG_DATA from DYN_AUDIT_REP where M_DELETED='N' and M_TAG_DATA='CPLIRD'; -- get information about the audit of batch of feeders execution
 
-select * from MXODR_ASSEMBLY_LOG;
+select * from MXODR_ASSEMBLY_LOG where MESSAGE_ID = 2; --MXODR_ASSEMBLY_LOG CFGT_TMPL_DBF;
 
 --2.11 queries
 select * from TRN_USRD_DBF where M_LABEL like '%REALTIME%';

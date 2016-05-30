@@ -76,6 +76,10 @@ from master..sysdatabases sysD join master..sysusages sysU on sysD.dbid = sysU.d
 where sysD.name = 'BBVA_CONVERSION_DEBUG' order by sysU.lstart;
 select * from master..monIOQueue;
 
+-- GET THE LOG SEMAPHORE CONTENTION
+select DBID, DBName, AppendLogRequests, AppendLogWaits, (convert(numeric(10,0),AppendLogWaits)/convert(numeric(10,0),AppendLogRequests))*100 as 'LogContention%'  
+from master..monOpenDatabases;
+
 -- GET TABLE SIZE
 select O.name, O.loginame, space_used_kb=(used_pages(db_id(),O.id)*4) --space_used_kb contains space used by data and index
 from sysobjects O
