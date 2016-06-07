@@ -1,45 +1,11 @@
 # _*_ coding:Utf8 _*_   #define the encoding type
 from collections import defaultdict, deque
-import shlex,subprocess,os,logging,getopt,sys
+import logging
 
-#This script is tested with python python278_64
-#In order to make it work you need to execute first those two commands in the shell launching the script
-#
-#export PYTHONHOME=/nettools/python_release/python278_64/
-#export LD_LIBRARY_PATH=/nettools/python_release/python278_64/lib/:$LD_LIBRARY_PATH
-
-def get_dmode(user,passwd,dserver,dbase):
-    """
-	get_dmodel() will retrieve the model stored in the DB
-	This model is retrieved only from MX3.1 version running on sybase
-    """
-    devnull = open('/dev/null','w')
-    try:
-        file_sql = open('/tmp/get_dm.sql','w')
-    except:
-        print "Cannot open file /tmp/get_dm.sql in write mode. Quit"
-	exit(1)
-		
-    file_sql.write("set nocount on\n")
-    file_sql.write("go\n")
-    file_sql.write("select M_RFG_TABLE_NAME+';'+M_RFG_FORMULA+';'+M_RFD_TABLE_NAME+';'+M_RFD_FORMULA from RDBCNSTR_DBF order by M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFD_TABLE_NAME,M_RFD_FORMULA\n")
-    #file_sql.write("select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFD_TABLE_NAME,M_RFD_FORMULA from RDBCNSTR_DBF\n")
-    file_sql.write('go\n')
-    file_sql.write('exit\n')
-    file_sql.close()
-    s_cmd = "/opt/sybase/oc12.5.1-EBF12850/OCS-12_5/bin/isql -b -n -i/tmp/get_dm.sql -o/tmp/datamodel.txt -w300 -U"+user+' -P'+passwd+' -S'+dserver+' -D'+dbase
-    logging.info('sql command is : %s',s_cmd)
-    try:
-        arguments = shlex.split(s_cmd)
-        p = subprocess.Popen(arguments, stdout=devnull)
-        p.communicate()
-    except:
-        print 'Problem executing command : ',s_cmd
-	exit(2)
 	
-def generate_dmode():
+def generate_dmodel():
     """
-    generate_dmode will read the model available in a flat 'csv' like file
+    generate_dmodel will read the model available in a flat 'csv' like file
     It keeps the content in a defaultdict structure
     """
     global dd_dmodel, d_nodeToID, d_IdToNode
@@ -47,7 +13,7 @@ def generate_dmode():
     #the next two dictionaries is to store a unique ID per couple t-t_col:uniqueID and the reverse uniqueID:t-t_col
     d_nodeToID =  {}
     d_IdToNode = {}
-    st_filename = '/tmp/datamodel.txt'
+    st_filename = 'datamodel.txt'
     try:
         f_dmodel = open(st_filename,'r')
     except:
@@ -190,44 +156,14 @@ def search_graph(start_node,end_node):
         else:
             logging.info('-- %s with ID %s has no successors',d_IdToNode[s_curNode], s_curNode)
     return find_it    
-
-def usage():
-    print 'ERROR in calling the script'
-    print 'This script is only working with Sybase, you must connect to any 3.1 database'
-    print 'You must set PYTHONHOME and LD_LIBRARY_PATH first'
-    print '  export PYTHONHOME=/nettools/python_release/python278_64/'
-    print '  export LD_LIBRARY_PATH=/nettools/python_release/python278_64/lib/:$LD_LIBRARY_PATH'
-    print 'Syntax is : ${PYTHONHOME}/bin/python /tmp/dmodel.py -U INSTAL -P INSTALL -S <SYBASE_SERVER_NAME> -D <SYBASE_BASE_NAME>' 
         
 def main():
     global s_nodeChain
     logging.basicConfig(filename='mygraph.log', filemode='w', format='%(asctime)s:%(levelname)s:%(message)s', level=logging.DEBUG)
-    try:
-        opts, args = getopt.getopt(sys.argv[1:], 'U:P:S:D:')
-    except getopt.GetoptError as err:
-        usage()
-        sys.exit(2)
-
-    dServer = dBase = dUser = dPasswd = ''
-    for o,a in opts:
-        if o == '-U':
-            dUser = a
-        elif o == '-P':
-            dPasswd = a
-        elif o == '-S':
-            dServer = a
-        elif o == '-D':
-            dBase = a
-    if dServer == '' or dBase == '' or dUser == '' or dPasswd =='':
-        usage()
-        sys.exit(2) 
-    
-    logging.info('---- DServer = %s / DBase = %s / DUser = %s / DPasswd = %s ',dServer, dBase, dUser, dPasswd)
-    get_dmode(dUser,dPasswd,dServer,dBase)
     s_startT = raw_input("what's the source table? : ").upper().strip() #you can use TRN_ENTSL_DBF as a test
     s_endT = raw_input("what's the target table? : ").upper().strip() #you can use RT_LOAN_DBF as a test
     s_nodeChain='' 
-    generate_dmode()
+    generate_dmodel()
     if search_graph(s_startT,s_endT):
         get_result(d_nodeToID[s_startT],d_nodeToID[s_endT],d_predecessor,d_level)
         #print s_nodeChain
