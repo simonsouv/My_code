@@ -1,8 +1,8 @@
 select @@version;
 select @@spid;
 select db_name();
-sp_help RC_PL_31_REP;
-sp_spaceused TRN_HDR_DBF, 1;
+sp_help COREPL_REP; --COREPL_REP DYN_AUDIT_REP
+sp_spaceused MPY_SMC_DBF, 1;
 sp_helpindex RT_INDEX_DBF;
 sp_helprotect TRN_HDR_DBF;
 sp_helpdb;
@@ -20,9 +20,12 @@ select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFG_RELATIONSHIP,M_RFD_TABLE_NAME,M_RFD_
 select 'select * from '+M_RFG_TABLE_NAME+' where '+M_RFG_FORMULA+' = ''188'' ;' from RDBCNSTR_DBF where M_RFD_TABLE_NAME='CM_MKTSR_DBF'; and M_RFD_FORMULA='M_LABEL';
 
 --3.1 queries
-select PATH from MXODR_ASSEMBLY_LOG where GSTATUS = 'F';
+select OB.M_OBJECT_ID, OB.M_OBJECT_NAME, OB.M_CLASS_NAME, CL.M_TABLE_NAME, CS.M_RFD_TABLE_NAME
+from RDB_OBJECT_DBF OB join RDB_CLASS_DBF CL on OB.M_CLASS_NAME = CL.M_CLASS_NAME join RDBCNSTR_DBF CS on CL.M_TABLE_NAME = CS.M_RFG_TABLE_NAME where M_OBJECT_NAME like '%Rate curve%'; -- list dependance for one object to export
+select * from RDBCNSTR_DBF where M_RFG_TABLE_NAME = 'TRN_HDR_DBF' and M_RFG_FORMULA = 'M_INSTRUMENT';
+select rtrim(M_RFG_TABLE_NAME), rtrim(M_RFG_FORMULA), rtrim(M_RFD_TABLE_NAME), rtrim(M_RFD_FORMULA) from RDBCNSTR_DBF;
+select T1.M_ID, T1.M_INSTRUMENT,M_RSKSECTION, M_PL_KEY1, count(1) from TRN_ARCB_DBF T1 left join TRN_PLIN_DBF T2 on convert(char(20),T1.M_INSTRUMENT) = T2.M_REFERENCE where T2.M_REFERENCE is null group by T1.M_ID, T1.M_INSTRUMENT, M_RSKSECTION, M_PL_KEY1;
 select M_TRN_FMLY,M_TRN_GRP, M_TRN_TYPE, count(1) from TRN_HDR_DBF T join FLT_MAP_DBF M on T.M_NB = M.M_NB group by M_TRN_FMLY,M_TRN_GRP, M_TRN_TYPE order by count(1) DESC; --what s the representation of the deals in FLT_MAP_DBF?
-
 select dyn.M_IDJOB,dyn.M_DATEGEN,scn.M_REFERENCE, scn.M_NB_ITEMS,case when dyn.M_EXE_STATUS = 'T' then 'On-going' when dyn.M_EXE_STATUS = 'F' then 'Failed' end as STATUS, count(*) as REMAINING, ((scn.M_NB_ITEMS - count(*))/scn.M_NB_ITEMS) * 100 as PCT_COMPLETE
 from DYN_AUDIT_REP dyn join SCANNER_REP scn on convert(char,dyn.M_IDJOB) = scn.M_EXT_ID
     join BATCH_REP bat on scn.M_REFERENCE = bat.M_SCANNER_ID
@@ -37,15 +40,19 @@ where dyn.M_IDJOB = 1306763; -- list of remaining deals to be completed per batc
 
 select M_IDJOB, M_DATEGEN, M_DELETED, M_TAG_DATA from DYN_AUDIT_REP where M_DELETED='N' and M_TAG_DATA='CPLIRD'; -- get information about the audit of batch of feeders execution
 
-select * from MXODR_ASSEMBLY_LOG where MESSAGE_ID = 2; --MXODR_ASSEMBLY_LOG CFGT_TMPL_DBF;
+select * from MXODR_ASSEMBLY_LOG where STEP like '%VolSettingsAsg%';
+
 
 --2.11 queries
-select * from TRN_USRD_DBF where M_LABEL like '%REALTIME%';
-select T1.M_GROUP, T1.M_USER, T2.M_E_UP, T2.M_DESC from TRN_USRG_DBF T1 join TRN_USRD_DBF T2 on T1.M_USER = T2.M_LABEL where T1.M_GROUP like '%FO%' order by T1.M_GROUP, T1.M_USER ;
-select count(*) from COREPL2_REP where M_MX_REF_JOB = 1306746;
-select * from DYN_AUDIT_REP where M_OUTPUTTBL='COREPL2.REP';
-select * from TRN_HDR_DBF where TRN_HDR_DBF.M_NB = 6743362;
-select * from RC_PL_211_REP where M_NB = 6743362;
+select M_TRN_FMLY, M_TRN_GRP,M_TRN_TYPE,M_TRN_STATUS, count(1) from TRN_HDR_DBF where M_PURGE_STS <> 2 group by M_TRN_FMLY, M_TRN_GRP,M_TRN_TYPE,M_TRN_STATUS order by M_TRN_FMLY, M_TRN_GRP,M_TRN_TYPE,M_TRN_STATUS;
+select M_PURGE_DATE,M_PURGE_GRP,M_PURGE_STS, count(1) from TRN_HDR_DBF group by M_PURGE_DATE,M_PURGE_GRP,M_PURGE_STS order by M_PURGE_DATE,M_PURGE_GRP,M_PURGE_STS;
+select M_TRN_DATE,count(1) as number_of_deals_inserted from TRN_HDR_DBF where M_TRN_DATE between '2015-10-13' and '2015-10-20' group by M_TRN_DATE order by M_TRN_DATE;
+
+select jaudit.M_BATCH, jaudit.M_STATUS, jaudit.M_DATE, jaudit.M_TIME, jaudit.M_ENDTIME, 
+    jaudit.M_MX_REF_JOB, jaudit.M_REF_DATA, jaudit.M_DATAGEN, jaudit.M_USER, jaudit.M_GRP, jaudit.M_DESK,
+    ajob.M_PID
+from JOB_AUDIT_REP jaudit join ACT_JOB_DBF ajob on jaudit.M_MX_REF_JOB = ajob.M_IDJOB and jaudit.M_REF_DATA = ajob.M_REF_DATA;
+    join ACT_BAT_DBF abat on ajob.M_BATCH = abat.M_LABEL;
 
 -- BBVA rec scope of deals
 truncate table MX_USER_GROUP_DBF;
@@ -225,3 +232,5 @@ or T1.M_SPFOLIO in
 'VOLSGD','VOLTWD','VOLUSD','VRMCAPCNF','VRMEXOTIC','VRMEXOTOT','VTABNPVMX','VTACAJAMX','VTC BBVA',
 'VTCBDTBBVA','VTCOPCBONOBBVA','VTCSWAPTIONBBVA','VTLBDTBBVA','VTLDIGBBVA','VTLVANILLABBVA','XXBBVLPSW',
 'ZZASSETSWAP','ZZMC02','ZZSWAPS','ZZUSA')) and T2.M_NB is null;
+
+
