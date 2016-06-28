@@ -88,11 +88,11 @@ $0~/Transaction Management$/{
 		getline
 		while ($0 !~ /Fully Logged DMLs/){getline;} # skip the lines to go to Fully log part
 		getline;
-		if ($NF=="%") full_ulc=$(NF-1); else full_ulc="n/a"
+		if ($NF=="%") {full_ulc=$(NF-1);full_ulc_count=$(NF-2)} else {full_ulc="n/a";full_ulc_count=$(NF-2)}
 		getline
 		while ($0 !~ /Minimally Logged DMLs/){getline;} # skip the lines to go to Minimally logged log part
 		getline;
-		if ($NF=="%") minimally_full_ulc=$(NF-1); else minimally_full_ulc="n/a"
+		if ($NF=="%") {minimally_full_ulc=$(NF-1);minimally_full_ulc_count=$(NF-2)} else {minimally_full_ulc="n/a";minimally_full_ulc_count=$(NF-2)}
 		while ($0 !~ /ULC Semaphore Requests/){getline;} # skip the lines to go to ULC semaphore requests section
 		getline;getline;
 		if ($NF=="%") ulc_sem_wait=$(NF-1); else ulc_sem_wait="n/a"
@@ -208,7 +208,7 @@ $0~/Network I\/O Management$/{
 		while ($0 !~ /Avg Bytes Sent/){getline;}	# skip line to go directly to section Avg Bytes Sent per Packet
 		packet_sent_avg_size = $NF
 		getline
-		printf  "%s/%s/%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n",annee,mois,jour,heure,dataserver,syb_version,moyenne_user,moyenne_system,moyenne_io,moyenne_idle,context_value,housekeeper_dirty,full_ulc,minimally_full_ulc,ulc_sem_wait,sem_wait,all_cache_hit,all_cache_miss,all_cache_buff_grab_dirty,large_pool_denied_prefetch,large_io_effectiveness,def_cache_hit,def_cache_hit_wash,def_cache_miss,def_cache_large_pool_denied_prefetch,def_cache_large_io_used,stmt_cached,stmt_found,stmt_not_found,stmt_dropped,max_io,io_struct,io_serv_conf_limit,io_engine_conf_limit,io_os_conf_limit,net_delayed,packet_rec_avg_size,packet_sent_avg_size;
+		printf  "%s/%s/%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n",annee,mois,jour,heure,dataserver,syb_version,moyenne_user,moyenne_system,moyenne_io,moyenne_idle,context_value,housekeeper_dirty,full_ulc,minimally_full_ulc,ulc_sem_wait,sem_wait,all_cache_hit,all_cache_miss,all_cache_buff_grab_dirty,large_pool_denied_prefetch,large_io_effectiveness,def_cache_hit,def_cache_hit_wash,def_cache_miss,def_cache_large_pool_denied_prefetch,def_cache_large_io_used,stmt_cached,stmt_found,stmt_not_found,stmt_dropped,max_io,io_struct,io_serv_conf_limit,io_engine_conf_limit,io_os_conf_limit,net_delayed,packet_rec_avg_size,packet_sent_avg_size,full_ulc_count,minimally_full_ulc_count;
 	}
 	#print  "end network io management section"
 }

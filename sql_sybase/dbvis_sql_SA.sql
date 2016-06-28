@@ -33,23 +33,23 @@ dbcc pglinkage(2,16473,0,2,0,1);
 select StatisticID, Statistic, InstanceID, EngineNumber, Sample, SteadyState, Avg_1min, Avg_5min, Avg_15min, Peak, Max_1min, Max_5min, Max_15min from master..monSysLoad; -- check especially Statistic 'run queue length'
 
 -- GET PROCEES INFORMATION
-select * from master..monProcess where SPID=522; -- general information about a process
-select * from master..monProcessActivity where SPID=522;
-select * from master..monProcessStatement where SPID=522;
+select * from master..monProcess where SPID=425; -- general information about a process
+select * from master..monProcessActivity where SPID=425;
+select * from master..monProcessStatement where SPID=425;
 select p.Login,p.Application,p.Command,pa.ULCBytesWritten, pa.ULCFlushes, pa.ULCFlushFull,pa.ULCMaxUsage 
 from master..monProcess p join master..monProcessActivity pa on p.SPID = pa.SPID and p.InstanceID = pa.InstanceID and p.KPID = pa.KPID
 where p.SPID=522; -- query to get ULC information about a SPID
 
 -- WAIT EVENTS INFOS
-select top 20 T2.Description Event_Desc, T3.Description Class_Desc, T1.* 
+select top 20 T2.Description Event_Desc, T3.Description Class_Desc, T1.WaitEventID, T1.WaitTime, T1.Waits, convert(numeric(10,0),WaitTime)/Waits "ms/Wait"
 from master..monSysWaits T1 join master..monWaitEventInfo T2 on T1.WaitEventID = T2.WaitEventID 
                             join master..monWaitClassInfo T3 on T2.WaitClassID = T3.WaitClassID 
 order by WaitTime desc; -- get System wide Waits events
-select T1.SPID, T1.InstanceID ,T1.KPID, T2.Waits, T2.WaitTime, T3.Description Event_Desc, T4.Description Class_Desc
+select T1.SPID, T1.InstanceID ,T1.KPID, T2.Waits, T2.WaitTime, convert(numeric(10,0),T2.WaitTime)/T2.Waits "ms/Wait", T3.Description Event_Desc, T4.Description Class_Desc
 from master..monProcess T1 join master..monProcessWaits T2 on T1.SPID = T2.SPID and T1.InstanceID = T2.InstanceID and T1.KPID = T2.KPID 
                            join master..monWaitEventInfo T3 on T2.WaitEventID = T3.WaitEventID
-                           join monWaitClassInfo T4 on T3.WaitClassID = T4.WaitClassID
-where T1.SPID = 519; -- get process Waits events
+                           join master..monWaitClassInfo T4 on T3.WaitClassID = T4.WaitClassID
+where T1.SPID in (select spid from master..sysprocesses where dbid in (select dbid from master..sysdatabases where name = 'ENV0000121_20864313')); -- get process Waits events
 
 -- CHECKPOINT AND HKW PROCESSES INFORMATION
 select T2.Command,T2.Priority,T1.CPUTime, T1.WaitTime, T1.PhysicalWrites,T1.PagesWritten, convert(numeric(10,0),T1.PagesWritten)/convert(numeric(10,0),T1.PhysicalWrites) as Avg_Pages_per_Writes
@@ -84,7 +84,8 @@ select DBID, DBName, AppendLogRequests, AppendLogWaits, (convert(numeric(10,0),A
 from master..monOpenDatabases;
 
 -- GET TABLE SIZE
-select O.name, O.loginame, space_used_kb=(used_pages(db_id(),O.id)*4) --space_used_kb contains space used by data and index
+select top 20 O.name, O.loginame, space_used_kb=(used_pages(db_id(),O.id)*4) --space_used_kb contains space used by data and index
 from sysobjects O
 where O.type = 'U'
 order by space_used_kb desc;
+
