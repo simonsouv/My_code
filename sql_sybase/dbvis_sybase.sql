@@ -1,14 +1,14 @@
 select @@version;
 select @@spid;
 select db_name();
-sp_help TRN_HDR_DBF; --COREPL_REP DYN_AUDIT_REP
+sp_help TRN_HDRF_DBF; --COREPL_REP DYN_AUDIT_REP
 sp_spaceused TRN_HDRF_DBF, 1;
 sp_helpindex GET_ONB_INVALID_ONB;
 sp_helprotect TRN_HDR_DBF;
 sp_helpdb;
 setuser 'guest';
 
-select id,name from sysobjects where name like 'MX_USER_GROUP_DBF'; --H399634_H1S
+select id,name from sysobjects where name like '%GNB%'; --H399634_H1S
 select * from syscolumns where id = 1309738675;
 select * from sysindexes where name like '%_SST%';
 select * from sysusers where uid=2;
@@ -24,7 +24,7 @@ drop index TRMKTOP_DBF.TRMKTOP_SST0;
 -- RDB scope SQL
 select * from RDB_OBJECT_DBF where M_OBJECT_ID='CM.476';
 select * from RDB_CLASS_DBF where M_CLASS_NAME=(select M_CLASS_NAME from RDB_OBJECT_DBF where M_OBJECT_ID='CM.476');
-select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFD_TABLE_NAME,M_RFD_FORMULA from RDBCNSTR_DBF where M_RFG_TABLE_NAME='NPD_BDY_DBF'; and M_RFD_FORMULA='M_INSGEN%';
+select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFD_TABLE_NAME,M_RFD_FORMULA from RDBCNSTR_DBF where M_RFD_TABLE_NAME like '%SITRN%'; and M_RFD_FORMULA='M_INSGEN%';
 select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFG_RELATIONSHIP,M_RFD_TABLE_NAME,M_RFD_FORMULA,M_RFD_RELATIONSHIP from RDBCNSTR_DBF where M_RFG_TABLE_NAME='CM_MKTSR_DBF'; and M_RFG_FORMULA='M_LABEL';
 select 'select * from '+M_RFG_TABLE_NAME+' where '+M_RFG_FORMULA+' = ''188'' ;' from RDBCNSTR_DBF where M_RFD_TABLE_NAME='CM_MKTSR_DBF'; and M_RFD_FORMULA='M_LABEL';
 
@@ -49,8 +49,9 @@ where dyn.M_IDJOB = 1306763; -- list of remaining deals to be completed per batc
 
 select M_IDJOB, M_DATEGEN, M_DELETED, M_TAG_DATA from DYN_AUDIT_REP where M_DELETED='N' and M_TAG_DATA='CPLIRD'; -- get information about the audit of batch of feeders execution
 
-select PATH from MXODR_ASSEMBLY_LOG where STEP like '%VolSettingsAsg%';
-select distinct(M_DFLT_TNB1) from RT_LNGN_DBF;
+select MESSAGE_TIME_STAMP,PATH, STEP, GSTATUS from MXODR_ASSEMBLY_LOG order by MESSAGE_TIME_STAMP;
+
+select M_NB, count(1) from TRN_HDRF_DBF group by M_NB;
 
 
 --2.11 queries
@@ -63,6 +64,9 @@ select M_TRN_DATE,count(1) as number_of_deals_inserted from TRN_HDR_DBF where M_
 select T2.M__ALIAS_, count(*) from TRN_MDS_DBF T1 join MPX_SMC_DBF T2 on T1.M_ALIAS = T2.M__ALIAS_ join MPY_SMC_DBF T3 on T2.M__INDEX_ = T3.M__INDEX_ group by T2.M__ALIAS_;
 select distinct(M_ALIAS) from TRN_MDS_DBF;
 select count(*) from MPY_SMC_DBF where M__INDEX_ in (select M__INDEX_ from MPX_SMC_DBF where M__ALIAS_='./BACK');
+select count(*) as before from EQ_MDB_PROD..MPX_GNB_DBF union select count(*) as after from MDB_NEW_DB..MPX_GNB_DBF;
+select * from MDB_NEW_DB..MPX_GNB_DBF;
+select * from EQ_MDB_PROD..MPX_GNB_DBF where M_ISSUER like '%EUXO13JUN15V2%';
 
 -- ROF correction
 select * from DPI_ID_DBF where M_LABEL1 like '%ARC%';
