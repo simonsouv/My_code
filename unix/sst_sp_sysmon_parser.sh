@@ -9,8 +9,8 @@
 #############################
 SP_SYSMON_AWK_DIR=/cygdrive/d/Perso/My_code/unix
 SP_SYSMON_AWK_FILE=${SP_SYSMON_AWK_DIR}/sst_sp_sysmon_parser.awk
-SP_SYSMON_OUTPUT_FILES=/cygdrive/d/Tmp/MEDIOBANCA/PAC_migration_stream/PAC_improvement/04.folder03_plus_ULC_128K_batchIOSize_200
-RESULT_DIR=/cygdrive/d/Tmp/MEDIOBANCA/PAC_migration_stream/PAC_improvement/04.folder03_plus_ULC_128K_batchIOSize_200
+SP_SYSMON_OUTPUT_FILES=/cygdrive/d/Tmp/MEDIOBANCA/PAC_migration_stream/PAC_improvement/04.folder03_plus_ULC_128K_batchIOSize_200/sysmon_round2
+RESULT_DIR=/cygdrive/d/Tmp/MEDIOBANCA/PAC_migration_stream/PAC_improvement/04.folder03_plus_ULC_128K_batchIOSize_200/sysmon_round2
 RESULT_FILE=${RESULT_DIR}/sp_sysmon_$(date +%Y%m%d_%H%M)_results.csv
 
 #############################
