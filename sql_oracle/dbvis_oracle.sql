@@ -16,5 +16,15 @@ select INDEX_NAME,STATUS, LAST_ANALYZED, CLUSTERING_FACTOR, NUM_ROWS from USER_I
 -- create index on a table
 create index ACT_DYN_SST_ND0 on ACT_DYN_DBF(M_OUTPUT);
 
+-- CTT related queries
+select * from RDB_OBJECT_DBF where M_CLASS_NAME like '%mx.statics.organization.MmGeneralSettingsSelector%';
+select * from RDB_OBJECT_DBF where M_OBJECT_ID='CM.506';
+select * from RDB_CLASS_DBF where M_CLASS_NAME=(select M_CLASS_NAME from RDB_OBJECT_DBF where M_OBJECT_ID='CM.97');
+select * from RDB_CLASS_DBF where M_TABLE_NAME='RS_MMSETH_DBF';
+
+-- 3.1 misc queries
 select M_MX_REF_JOB,count(*) from RC_MV_EXT_31_REP group by  M_MX_REF_JOB;
 delete from RC_MV_EXT_211_REP where M_MX_REF_JOB=331689;
+
+select M__ALIAS_,max(M__DATE_) from MPX_GN_DBF group by M__ALIAS_;
+

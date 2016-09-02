@@ -1,40 +1,85 @@
 select @@version;
 select @@spid;
 select db_name();
-sp_help SE_HEAD_DBF; --COREPL_REP DYN_AUDIT_REP
+sp_help CR_BSKH_DBF; --COREPL_REP DYN_AUDIT_REP
 sp_spaceused TRN_HDRF_DBF, 1;
-sp_helpindex GET_ONB_INVALID_ONB;
+sp_helpindex BD_GSET_DBF;
 sp_helprotect TRN_HDR_DBF;
 sp_helpdb;
 setuser 'guest';
 
-select id,name from sysobjects where name like '%FLT%'; --H399634_H1S
+select id,name from sysobjects where name like 'BD_GSET_DB%'; --H399634_H1S
 select * from syscolumns where id = 1309738675;
 select * from sysindexes where name like '%_SST%';
 select * from sysusers where uid=2;
 select object_id('TRN_HDR_DBF');
 
 drop index TRN_HDR_DBF.TRN_HDR_SST0;
-drop index GET_ONB.GET_ONB_SST0;
-drop index ONB_BY_MKTOP.ONB_BY_MKTOP_SST0;
-drop index GET_ONB_INVALID_ONB.GET_ONB_INVALID_ONB_SST1;
-drop index GET_ONB_INVALID_ONB.GET_ONB_INVALID_ONB_SST0;
-drop index TRMKTOP_DBF.TRMKTOP_SST0;
 
 -- RDB scope SQL
-select * from RDB_OBJECT_DBF where M_OBJECT_ID='CM.476';
-select * from RDB_CLASS_DBF where M_CLASS_NAME=(select M_CLASS_NAME from RDB_OBJECT_DBF where M_OBJECT_ID='CM.476');
-select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFD_TABLE_NAME,M_RFD_FORMULA from RDBCNSTR_DBF where M_RFD_TABLE_NAME like '%SITRN%'; and M_RFD_FORMULA='M_INSGEN%';
-select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFG_RELATIONSHIP,M_RFD_TABLE_NAME,M_RFD_FORMULA,M_RFD_RELATIONSHIP from RDBCNSTR_DBF where M_RFG_TABLE_NAME='CM_MKTSR_DBF'; and M_RFG_FORMULA='M_LABEL';
-select 'select * from '+M_RFG_TABLE_NAME+' where '+M_RFG_FORMULA+' = ''188'' ;' from RDBCNSTR_DBF where M_RFD_TABLE_NAME='CM_MKTSR_DBF'; and M_RFD_FORMULA='M_LABEL';
+select * from RDB_OBJECT_DBF where M_CLASS_NAME in ('mx.contract.stb.Container','mx.contract.stb.Registration');
+select * from RDB_OBJECT_DBF where M_OBJECT_ID='CM.820';
+select * from RDB_CLASS_DBF where M_CLASS_NAME=(select M_CLASS_NAME from RDB_OBJECT_DBF where M_OBJECT_ID='CM.820');
+select * from RDB_CLASS_DBF where M_TABLE_NAME in ('CR_BSKH_DBF');
+select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFD_TABLE_NAME,M_RFD_FORMULA from RDBCNSTR_DBF where M_RFG_TABLE_NAME like 'RS_MDRSRH_DBF'; and M_RFD_FORMULA='M_INSGEN%';
+select M_RFG_TABLE_NAME,M_RFG_FORMULA,M_RFG_RELATIONSHIP,M_RFD_TABLE_NAME,M_RFD_FORMULA,M_RFD_RELATIONSHIP from RDBCNSTR_DBF where M_RFD_TABLE_NAME='RT_INSGN_DBF'; and M_RFG_FORMULA='M_LABEL';
+select 'select * from '+M_RFG_TABLE_NAME+' where '+M_RFG_FORMULA+' = 152940035;' from RDBCNSTR_DBF where M_RFD_TABLE_NAME='CR_BSKH_DBF'; and M_RFD_FORMULA='M_LABEL';
+select * from RDBCNSTR_KEY_DBF where M_TABLE_NAME like 'RS_MDRSR%';
 
 --3.1 queries
+select * into CRDMDL_RTGB_DBF_BKP from CRDMDL_RTGB_DBF where M_BSK_UID = 152940035;
+update CRDMDL_RTGB_DBF set M_BSK_UID=152939960 where M_BSK_UID = 152940035;
+select * from CR_BSKH_DBF;
+select * into MDL_RTGB_DBF_BKP from MDL_RTGB_DBF where M_BSK_UID = 152940035;
+select * from MDL_RTGB_DBF_BKP; where M_BSK_UID = 152940035;
+update MDL_RTGB_DBF set M_BSK_UID=152939960 where M_BSK_UID = 152940035;
+
+select * from TRN_STG_DBF;
+drop table TRN_STGB_DBF_BKP;
+select * into TRN_STGB_DBF_BKP from TRN_STGB_DBF where M_REFERENCE in (19);
+delete from TRN_STGB_DBF where M_REFERENCE in (19);
+delete from TRN_STG_DBF where M_REFERENCE=19;
+
+select * from TRN_STGL_DBF where M_REF in (19,22);
+select * from DPI_ID_DBF where M_LABEL2='RT_LNGN'; --1
+select max(M_REFERENCE) FROM RT_LNGN_DBF;
+select M__ALIAS_,max(M__DATE_) from MPX_GN_DBF group by M__ALIAS_;
+select distinct(M__ALIAS_) from MPX_GN_DBF where M__DATE_ = '2016-05-23';
+select distinct(M__DATE_) from MPX_GN_DBF;
+SELECT COUNT(*) FROM MPX_GN_DBF where M_GENINTNB=3986;
+
+select * from MD_RTSRH_DBF;
+select M_LABEL from RS_MDRSRH_DBF; where M_LABEL='IRD_RT_USERS'; --M_LABEL=IRD_RT_USERS / M_INDEX=568416974
+select H.M_LABEL,U.M_LABEL, G.M_LABEL, M.M_LABEL 
+        from RS_MDRSRB_DBF B 
+        join RS_MDRSRH_DBF H on B.M__INDEX_ = H.M__INDEX_ 
+        left join TRN_USRD_DBF U on B.M_USER= U.M_REFERENCE 
+        left join TRN_GRPD_DBF G on B.M_RGT_GROUP = G.M_REFERENCE
+        left join MD_RTSRH_DBF M on B.M_SETTING = M.M_REFERENCE
+where H.M_LABEL='IRD_RT_USERS';
+
+select u.M_LABEL as 'Field name', case u.M_ETYPE when 1 then 'Manual' when 2 then 'List' end 'Field input type',u.M_ELABEL 'List table', l.M_STABLE as 'Systemtable', l.M_UTABLE as 'User defined structure name'
+from TABLE#STRUCT#TAB_UTF_DBF u
+join TABLE#STRUCT#TAB_UTH_DBF h on u.M_HEADER=h.M_REF
+join TABLE#STRUCT#TAB_LNK_DBF l on h.M_LABEL=l.M_UTABLE
+join TABLE#STRUCT#TAB_LNKI_DBF li on l.M_REF=li.M_REF
+group by u.M_LABEL,l.M_STABLE, l.M_UTABLE order by l.M_STABLE, l.M_UTABLE, u.M_LABEL;
+
+update TRN_DSKD_DBF set M_DATE='2016-06-07' where M_LABEL='FOD';
+select U.M_REFERENCE 'user ref',U.M_LABEL 'user name',U.M_FULL_NAME 'user full name', G.M_LABEL 'groupe name' 
+from MX_USER_DBF U join MX_USER_GROUP_DBF UG on U.M_REFERENCE = UG.M_USER_ID  join MX_GROUP_DBF G on UG.M_GROUP_ID = G.M_REFERENCE
+where U.M_LABEL like 'BBVA1%' order by U.M_LABEL, G.M_LABEL;
+
 select OB.M_OBJECT_ID, OB.M_OBJECT_NAME, OB.M_CLASS_NAME, CL.M_TABLE_NAME, CS.M_RFD_TABLE_NAME
 from RDB_OBJECT_DBF OB join RDB_CLASS_DBF CL on OB.M_CLASS_NAME = CL.M_CLASS_NAME join RDBCNSTR_DBF CS on CL.M_TABLE_NAME = CS.M_RFG_TABLE_NAME where M_OBJECT_NAME like '%Rate curve%'; -- list dependance for one object to export
+
 select * from RDBCNSTR_DBF where M_RFG_TABLE_NAME = 'TRN_HDR_DBF' and M_RFG_FORMULA = 'M_INSTRUMENT';
 select rtrim(M_RFG_TABLE_NAME), rtrim(M_RFG_FORMULA), rtrim(M_RFD_TABLE_NAME), rtrim(M_RFD_FORMULA) from RDBCNSTR_DBF;
+
 select T1.M_ID, T1.M_INSTRUMENT,M_RSKSECTION, M_PL_KEY1, count(1) from TRN_ARCB_DBF T1 left join TRN_PLIN_DBF T2 on convert(char(20),T1.M_INSTRUMENT) = T2.M_REFERENCE where T2.M_REFERENCE is null group by T1.M_ID, T1.M_INSTRUMENT, M_RSKSECTION, M_PL_KEY1;
+
 select M_TRN_FMLY,M_TRN_GRP, M_TRN_TYPE, count(1) from TRN_HDR_DBF T join FLT_MAP_DBF M on T.M_NB = M.M_NB group by M_TRN_FMLY,M_TRN_GRP, M_TRN_TYPE order by count(1) DESC; --what s the representation of the deals in FLT_MAP_DBF?
+
 select dyn.M_IDJOB,dyn.M_DATEGEN,scn.M_REFERENCE, scn.M_NB_ITEMS,case when dyn.M_EXE_STATUS = 'T' then 'On-going' when dyn.M_EXE_STATUS = 'F' then 'Failed' end as STATUS, count(*) as REMAINING, ((scn.M_NB_ITEMS - count(*))/scn.M_NB_ITEMS) * 100 as PCT_COMPLETE
 from DYN_AUDIT_REP dyn join SCANNER_REP scn on convert(char,dyn.M_IDJOB) = scn.M_EXT_ID
     join BATCH_REP bat on scn.M_REFERENCE = bat.M_SCANNER_ID
@@ -51,19 +96,103 @@ select M_IDJOB, M_DATEGEN, M_DELETED, M_TAG_DATA from DYN_AUDIT_REP where M_DELE
 
 select MESSAGE_TIME_STAMP,PATH, STEP, GSTATUS from MXODR_ASSEMBLY_LOG order by MESSAGE_TIME_STAMP;
 
-select distinct(M_MX_REF_JOB) from SST_COREPL_REP;
-truncate table SST_COREPL_REP;
+-- e-tradepad information
+select distinct(M_OWNER) from EBX_HDR_DBF order by M_OWNER;
+select * from EBX_HDR_DBF where M_DOMAIN='e-Tradepad'and M_OWNER in ('REALTIME','MUREXFO');
+select T1.M_LABEL, T1.M_DISPLAY from EBX_BOX_DBF T1, EBX_HDR_DBF T2 where T1.M_KEY=T2.M_BOXES and T2.M_OWNER='REALTIME';
+select T1.M_LABEL, T1.M_DISPLAY from EBX_BOX_DBF T1 where T1.M_LABEL in ('Validation','Daily','Lookuptables','Usedmarketdata','Tradequery','Multi','OnTheFlyFXD','OnTheFly(Mid)','OnTheFly(B/A)','IRS','IRSButterfly','IRSTenorSpread','test','TEST','test2');
+select * from NPD_HDR_DBF; where M_OWNER='MUREXFO' order by M_LABEL;
+
+-- group definition for comparison
+-- get info from main screen
+select  G.M_LABEL 'Group name', 
+        case G.M_ACTIVITY when 'E' then 'End user' when 'C' then 'Configurator' end 'Group type', 
+        case G.M_BO_FO when 0 then 'Front office' when 1 then 'P&L Control' when 2 then 'Processing' end 'Group activity', 
+        case G.M_BO_FO when 0 then FOD.M_LABEL when 1 then PLCC.M_LABEL when 2 then PC.M_LABEL end 'Group association' ,
+        NAV.M_LABEL 'Nav tmpl', CONS.M_LABEL 'Consistency tmpl', 
+        case G.M_HELP_MONIT when 2 then 'no access' when 1 then 'limited access' when 0 then 'full access' end 'Help monit access',
+        G.M_CUT_OFF 'Def cut-off' , G.M_TRN_OFFSET 'Area code' , TZ.M_LABEL 'TZ',
+        case G.M_LIM_CHECK when 0 then 'No Contribution' when 1 then 'Contribution' when 2 then 'Authorization' end 'Risk control conn mode', 
+        STAT.M_LABEL 'Stmt cat tmpl', ACG.M_LABEL 'Acg ctrl tmpl', EPD.M_ACTIV 'Distrib profile',R.M_LABEL 'Distrib role', NKEY.M_LABEL 'Netting tmpl',
+        case M_ACCMODE when 0 then 'All modes' when 1 then 'Server mode only' end 'Proc script login',
+        MUB.M_LABEL 'Ptf tree tmpl', PTF.M_LABEL 'Ptf alias tmpl', PA.M_LABEL 'Proc area tmpl', DM.M_LABEL 'DM reporting tmpl', M_SFV_ADM 'Full sort/filter/view admin rights',
+        G.M_RQWHERE_E 'Allow modif RQWHERE', SQ.LABEL 'Trade SQL query',QFILT.M_LABEL 'Query filters', M_RGT_DEVICE 'Rights MReports output device',
+        case G.M_DATE_MODE when 0 then 'DD/MM/YYY' when 1 then 'MM/DD/YY' when 2 then 'YY/MM/DD' when 9 then 'Default' end 'Def date display',
+        CCWT.M_LABEL 'ctp chinese wall', ICWT.M_LABEL 'IRS chinese wall', LCWT.M_LABEL 'LD chinese wall', CDCWT.M_LABEL 'CD chinese wall', UTL.M_LABEL 'User Table Layout tmpl',
+        CSFT.M_LABEL 'Hierarchy rights tmpl', CSFJ.M_LABEL 'Join right tmpl', OSPR.M_LABEL 'OSP rights' , OSPP.M_LABEL 'OSP profiles', DAP.M_NAME 'DAP exp tmpl'
+from TRN_GRPD_DBF G
+left join SQL_QRY SQ on G.M_TRDSQLPREF = SQ.ID -- join to retrieve trade sql filter
+left join ROLE_DBF R on G.M_ROLE = R.M_REFERENCE -- join to retrieve distribution role
+left join EPD_ACT_DBF EPD on G.M_DST_PROF = EPD.M_ACTIV -- join to retrieve distribution profile
+left join ACG_CFG_CTRLT_DBF ACG on G.M_ACGCTRL_TPL = ACG.M_REFERENCE -- join to retrieve accounting control template
+left join HEDGE#STAT_TMPL_DBF STAT on G.M_STAT_TPL = STAT.M_REFERENCE -- join to retrieve statement category template
+left join DAT_TZONE_DBF TZ on G.M_TIMEZONE = TZ.M_REFERENCE -- join to retrieve timezone label
+left join NAV_TMPL_DBF NAV on G.M_NAV_TMPL = NAV.M_REFERENCE -- join to retrieve navigation template label
+left join CONS_HDR_DBF CONS on G.M_CONS = CONS.M_REFERENCE -- join to retrieve consistency template label
+left join TRN_DSKDL_DBF FODL on G.M_FODS = FODL.M_CTN -- join to retrieve the set of of front office desk
+left join TRN_DSKD_DBF FOD on FODL.M_REF=FOD.M_REFERENCE -- join to retrieve FO desk label
+left join TRN_PC_DBF PC on G.M_PC=PC.M_REFERENCE -- join to retrieve Processing center label
+left join TRN_PLCC_DBF PLCC on G.M_PLCC=PLCC.M_REFERENCE -- join to retrieve PnL control center label
+left join NKEY_TEMP_DBF NKEY on G.M_NKEY_TMPL = NKEY.M_REFERENCE -- join to retrieve netting rights template
+left join MUB#MUB_TPL_DBF MUB on MUB.M_REFERENCE= G.M_MUB_TMPL -- join to retrieve the ptf tree template
+left join PTF_ATMP_DBF PTF on G.M_PTF_ATMPL=PTF.M_REF -- join to retrieve ptf alias template
+left join PA_RGTH_DBF PA on G.M_PA_RIGHTS = PA.M_REFERENCE -- join to retrive processing area template
+left join ACT_RGTTMP_DBF DM on G.M_REF_REPTMP = DM.M_REF -- join to retrieve DM reporting template
+left join QUE_CFGTPL_DBF QFILT on G. M_QUERYTPLREF = QFILT.M_REFERENCE -- join to retrieve query filters
+left join CTP_CWT_DBF CCWT on G.M_CTP_CWT = CCWT.M_REFERENCE -- join to retrieve counterpart chinese wall template
+left join CWT_RTGEN_IRS_DBF ICWT on G.M_CWT_IRS = ICWT.M_REFERENCE -- join to retrieve IRS chinese wall template
+left join CWT_RTGEN_LD_DBF LCWT on G.M_CWT_LD = LCWT.M_REFERENCE -- join to retrieve LD chinese wall template
+left join CWT_RTGEN_CD_DBF CDCWT on G.M_CWT_CD = CDCWT.M_REFERENCE -- join to retrieve CD chinese wall template
+left join TABLE#STRUCT#TAB_UTLT_DBF UTL on G.M_UT_LAY_TPL = UTL.M_REFERENCE -- join to retrieve user tables layout template
+left join CSF_TREE_RGTH_DBF CSFT on G.M_TREE_RIGHT = CSFT.M_REFERENCE -- join to retrieve hierarchy right template
+left join CSF_JOIN_RGTH_DBF CSFJ on G.M_JOIN_RIGHT = CSFJ.M_REFERENCE -- join to retrieve join rights template
+left join OSP_RIGHTS_DBF OSPR on G.M_OSP_RIGHTS = OSPR.M_REFERENCE -- join to retrieve osp rights template
+left join OSP_DEFAULT_PROFILE_DBF OSPP on G.M_OSP_DEF_PFL = OSPP.M_REFERENCE -- join to retrieve osp profile template
+left join DAP_CFGT_DBF DAP on G.M_DAP_TMPL = DAP.M_NAME -- join to retrieve DAP export template
+order by G.M_LABEL,FOD.M_LABEL;
+-- where G.M_LABEL='SUPPORT' order by FOD.M_LABEL;
+-- get info for Typology Grouping Template screen
+select  M_TYPE, case M_TYPE when 1 then 'Contract/Package' when 2 then 'Deliverable' when 3 then 'Contract/Package event' when 4 then 'Deliverable event'
+        when 5 then 'Settlement instruction' when 6 then 'Order' when 7 then 'Order event' when 8 then 'Account' when 9 then 'Accoung event'
+        when 10 then 'Security' when 11 then 'Security event' when 12 then 'Hedge' when 13 then 'Hedge event' when 14 then 'Accounting entry'
+        when 15 then 'Accounting entry event' when 16 then 'Inventory accounting entry' when 18 then 'Credit basket'
+        when 19 then 'Margin requirement' when 20 then 'Transfer' when 21 then 'Collateral exchange event' end 'type', M_LABEL
+from STP_RGH_TREE_DBF order by M_TYPE;
+-- get info from STP right screen
+select G.M_LABEL, PC.M_LABEL, WFT.M_TPL_LBL, STP_T.M_LABEL
+from TRN_GRPD_DBF G
+left join GRP_STP_DBF GRP_STP on G.M_REFERENCE = GRP_STP.M_GRP_REF
+left join STP_RGH_TPL_GBL_DBF STP_T on GRP_STP.M_RIGHT_DATA = STP_T.M_REFERENCE
+left join TRN_PC_DBF PC on GRP_STP.M_PC_REF = PC.M_REFERENCE
+left join WFTPLRI_DBF WFT on GRP_STP.M_STP_RIGHTS = WFT.M_RIGHTS_LBL
+order by G.M_LABEL;
+-- get info from Portfolio rights
+select G.M_GROUP, T.M_LABEL,P.M_LABEL,
+case G.M_ACCESS when 0 then 'Read/Write' when 1 then 'Read only' when 2 then 'Deny' when 4 then 'Write only' end
+from MUB#GRP_RGT1_DBF G
+join MUB#MUB_TREE_DBF P on G.M_NODE_REF=P.M_REF
+join MUB#MUB_TPL_DBF T on P.M_TRE_GROUP= T.M_TRE_GROUP and G.M_TEMPLATE=T.M_REFERENCE
+order by G.M_GROUP;
+-- get sql engine rights
+select  R.M_GROUP 'Group', R.M_TEMPLATE 'Template', R.M_EDIT 'Allow editing mode', T.M_NAME 'Package name',
+        case T.M_FLAGS when 0 then 'no rights' when 1 then 'r' when 2 then 'i' when 3 then 'r/i' when 4 then 'd'
+        when 5 then 'r/d' when 6 then 'i/d' when 7 then 'r/i/d' when 8 then 'm' when 9 then 'r/m' when 10 then 'i/m'
+        when 11 then 'r/i/m' when 12 then 'm/d' when 13 then 'r/m/d' when 14 then 'i/m/d' when 15 then 'r/i/m/d' end 'Rights'
+from SQL_RGHT_DBF R join SQL_TMPL_DBF T on R.M_TEMPLATE=T.M_LABEL order by R.M_GROUP;
+-- get CfgMgmt rights
+select * from CFGT_TMPL_RIGHTS_DBF order by M_GROUP_NAME;
+-- get mxml exchange rights
+select GROUP_NAME,SERVICE,LABEL from XML_SERVICE_GROUPS where SERVICE in ('MXTEMPLATES', 'MXDICTIONARY', 'MXMLEXCHANGE', 'MXDECISIONRULES') order by GROUP_NAME,SERVICE,LABEL;
 
 --2.11 queries
+select count(1) from FIXLD_HD_DBF ;
+select PFOLIO from (select M_BPFOLIO PFOLIO from TRN_HDR_DBF union select M_SPFOLIO PFOLIO from TRN_HDR_DBF) T1 where PFOLIO not in;
+select M_NB,M_TRN_STATUS,M_INSTRUMENT from TRN_HDR_DBF where M_NB in (2509371,2557663,2612716,2641057);
 select M_TRN_FMLY, M_TRN_GRP, M_TRN_TYPE, count(*) as total from TRN_HDR_DBF  group by M_TRN_FMLY, M_TRN_GRP, M_TRN_TYPE order by M_TRN_FMLY, M_TRN_GRP, M_TRN_TYPE;
 select M_TRN_FMLY, M_TRN_GRP,M_TRN_TYPE,M_TRN_STATUS, count(1) from TRN_HDR_DBF where M_PURGE_STS <> 2 group by M_TRN_FMLY, M_TRN_GRP,M_TRN_TYPE,M_TRN_STATUS order by M_TRN_FMLY, M_TRN_GRP,M_TRN_TYPE,M_TRN_STATUS;
 select M_PURGE_DATE,M_PURGE_GRP,M_PURGE_STS, count(1) from TRN_HDR_DBF group by M_PURGE_DATE,M_PURGE_GRP,M_PURGE_STS order by M_PURGE_DATE,M_PURGE_GRP,M_PURGE_STS;
-select M_TRN_DATE,count(1) as number_of_deals_inserted from TRN_HDR_DBF where M_TRN_DATE between '2015-10-13' and '2015-10-20' group by M_TRN_DATE order by M_TRN_DATE;
-
-;
-select T2.M__ALIAS_, count(*) from TRN_MDS_DBF T1 join MPX_SMC_DBF T2 on T1.M_ALIAS = T2.M__ALIAS_ join MPY_SMC_DBF T3 on T2.M__INDEX_ = T3.M__INDEX_ group by T2.M__ALIAS_;
-select distinct(M_ALIAS) from TRN_MDS_DBF;
-select count(*) from MPY_SMC_DBF where M__INDEX_ in (select M__INDEX_ from MPX_SMC_DBF where M__ALIAS_='./BACK');
+select convert(char(12),M_TRN_DATE,111),M_TRN_FMLY, count(1) as number_of_deals_inserted from TRN_HDR_DBF where M_TRN_DATE between '2016-05-01' and '2016-05-30' 
+group by M_TRN_DATE,M_TRN_FMLY order by M_TRN_DATE,M_TRN_FMLY; compute sum(count(1)) by M_TRN_DATE, M_TRN_FMLY;
 
 select  T.M_TRN_FMLY, T.M_TRN_GRP, T.M_TRN_TYPE, count(1) as TOTAL
 from TRN_HDR_DBF T join TRN_HDRF_DBF TF on T.M_NB = TF.M_NB
@@ -79,6 +208,13 @@ group by T.M_TRN_FMLY, T.M_TRN_GRP, T.M_TRN_TYPE;
 
 
 -- ROF correction
+
+-- problem with ROF august 26th
+select M_NB,M_TRN_STATUS,M_INSTRUMENT from TRN_HDR_DBF_BCK_ROF where M_NB in(2509371,2557663,2612716,2641057) union all select M_NB,M_TRN_STATUS,M_INSTRUMENT from TRN_HDR_DBF where M_NB in(2509371,2557663,2612716,2641057);
+select M_NB,M_TRN_STATUS,M_INSTRUMENT from TRN_HDR_DBF where M_NB in(2509371,2557663,2612716,2641057) order by M_NB;
+select * into TRN_HDR_DBF_BCK_ROF from TRN_HDR_DBF where M_NB in(2509371,2557663,2612716,2641057);
+delete from TRN_HDR_DBF where M_NB in(2509371,2557663,2612716,2641057);
+
 select * from DPI_ID_DBF where M_LABEL1 like '%ARC%';
 update DPI_ID_DBF set M_UNIQUE_ID=64 where M_LABEL1='SPB_ARC' and M_LABEL2='trn_arch.dbf' and M_UNIQUE_ID=63;
 insert TRN_ARCH_DBF(M_ID,M_TIME_CMP,M_BO_FO,M_USR_NAME,M_USR_GROUP,M_USR_DESK,M_DELETED,M_PC,M_COMMENT,M_DATE_ARC)
@@ -159,6 +295,7 @@ where M_BPFOLIO not in ('MX818BE','MX821BC','MX821BEBC','MX821TN','MX825HN','MX8
 'UST_LOCK','UST_SPREAD','MGDSTOXAF','INIRDODISTMAD','INIRDOMIL','ASSWMIL','INIRDOOPC','INIRDODERIVNY','INIRDOUS_TREASU','NY_MANAGEMENT',
 'NY_ST_DER','MAD_UST_BTB','UST_BOND','UST_STRAT','KOR_LT_SWAP','INIKORLT','VOL_IR_KOREA_1','INIRDOLTIRTPE','TWN_LTIRD2_DBU','TWN_VOLIR1_DBU',
 'INIRDOVOLIRTPE','TWN_LTIRD1_DBU'); --2422090
+
 
 -- BBVA rec scope of deals
 truncate table MX_USER_GROUP_DBF;
