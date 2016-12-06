@@ -2,15 +2,28 @@ select @@version;
 select db_name();
 select db_id();
 select * from syslisteners;
-sp_who;
-sp_lock null,null,1;
-sp_helpdb;
+kill 326;
+sp_configure 'permission cache entries';
 sp_help sysdevices;
-sp_helpindex ;
+sp_helpdb;
+sp_helpindex TRN_HDR_DBF;
 sp_helprotect SIMON;
+sp_lock null,null,1;
 sp_spaceusage 'display','tranlog','syslogs';
-sp_HelpIndex_sg;
-sp_configure 'parallel degree';
+sp_who;
+
+sp_monitorconfig 'all';
+sp_monitor connection, diskio;
+
+-- QUERY ANALYZER flags
+setuser 'MUREXDB';
+set statistics time,io,plancost on;
+set showplan on;
+set statement_cache off;
+dbcc traceon(3604,9528); -- format the output of plancost
+set option show_missing_stats on;
+
+update statistics TRN_HDR_DBF(M_PURPOSE);
 
 -- GET CAGHE INFORMATION
 sp_cacheconfig;
@@ -18,7 +31,7 @@ sp_helpcache;
 sp_logiosize 'all';
 
 -- GET OBJECT INFORMATION
-select name,id from sysobjects where name like '%SIMON%';
+select name,id,type from sysobjects where name like '%FLT_MAP%';
 select object_name(1737782963);
 select db_id();
 
@@ -32,13 +45,31 @@ dbcc pglinkage(2,16473,0,2,0,1);
 -- GET ASE SYSTEM WIDE INFORMATION
 select StatisticID, Statistic, InstanceID, EngineNumber, Sample, SteadyState, Avg_1min, Avg_5min, Avg_15min, Peak, Max_1min, Max_5min, Max_15min from master..monSysLoad; -- check especially Statistic 'run queue length'
 
--- GET PROCEES INFORMATION
-select * from master..monProcess where SPID=425; -- general information about a process
-select * from master..monProcessActivity where SPID=425;
-select * from master..monProcessStatement where SPID=425;
-select p.Login,p.Application,p.Command,pa.ULCBytesWritten, pa.ULCFlushes, pa.ULCFlushFull,pa.ULCMaxUsage 
-from master..monProcess p join master..monProcessActivity pa on p.SPID = pa.SPID and p.InstanceID = pa.InstanceID and p.KPID = pa.KPID
+-- GET PROCESS INFORMATION
+select spid, kpid,status,hostname,program_name,hostprocess,cmd,cpu,physical_io,blocked,dbid,uid,tran_name,time_blocked,network_pktsz from master..sysprocesses where spid in (287);
+select * from master..monProcess where SPID=287 and KPID=708378906; -- Provides detailed statistics about processes that are currently executing or waiting. Empty if the SPID does nothing
+select * from master..monProcessActivity where SPID=287 and KPID=708378906; -- Provides detailed statistics about process activity
+select * from master..monProcessStatement where SPID=287 and KPID=708378906; -- Provides information about the statement currently executing
+
+select p.Login,p.Application,p.Command,pa.ULCBytesWritten, pa.ULCFlushes, pa.ULCFlushFull,pa.ULCMaxUsage from master..monProcess p join master..monProcessActivity pa on p.SPID = pa.SPID and p.InstanceID = pa.InstanceID and p.KPID = pa.KPID
 where p.SPID=522; -- query to get ULC information about a SPID
+
+-- GET LOCK INFORMATION
+select * from monLocks where SPID=287 and KPID=708378906;
+
+-- GET IO INFORMATION
+select sysDv.name, sysU.lstart, sysU.size, sysU.vstart, sysU.segmap, sysU.vdevno
+from master..sysdatabases sysD join master..sysusages sysU on sysD.dbid = sysU.dbid 
+                               join master..sysdevices sysDv on sysU.vdevno = sysDv.vdevno 
+                               join master..monDeviceSpaceUsage monDevS on sysDv.vdevno = monDevS.VDevNo
+                               join master..monDeviceIO monDevI on monDevS.LogicalName = monDevI.LogicalName
+where sysD.name = 'BBVA_CONVERSION_DEBUG' order by sysU.lstart; -- get database mapping
+
+select LogicalName, Reads, APFReads, ReadTime, convert(numeric(10,0),ReadTime)/(Reads + APFReads) "Read_ms", 
+    Writes, WriteTime, case Writes when 0 then 0 else convert(numeric(10,0),WriteTime)/Writes end "Writes_ms", DevSemaphoreRequests, DevSemaphoreWaits  
+    from master..monDeviceIO monIO join master..sysdevices dev on monIO.LogicalName = dev.name 
+    join (select distinct u.vdevno from master..sysusages u join master..sysdatabases d on d.dbid = u.dbid where d.name = 'BBVA_CONVERSION_DEBUG') dev_used  on dev.vdevno = dev_used.vdevno; --IO speed information
+
 
 -- WAIT EVENTS INFOS
 select top 20 T2.Description Event_Desc, T3.Description Class_Desc, T1.WaitEventID, T1.WaitTime, T1.Waits, convert(numeric(10,0),WaitTime)/Waits "ms/Wait"
@@ -65,19 +96,6 @@ where T2.Command in ('CHECKPOINT SLEEP','HK WASH') and T1.Waits > 100 or T1.Wait
 select EngineNumber, HkgcMaxQSize, HkgcPendingItems, HkgcHWMItems, HkgcOverflows from master..monEngine; -- pre engine
 select top 25 DBName, ObjectName, IndexID, LogicalReads, PhysicalWrites, PagesWritten, RowsInserted, RowsDeleted, RowsUpdated  HkgcRequests, HkgcPending, HkgcOverflows 
 from master..monOpenObjectActivity order by HkgcPending desc; -- per table
-
--- GET IO INFORMATION
-select sysDv.name, sysU.lstart, sysU.size, sysU.vstart, sysU.segmap, sysU.vdevno
-from master..sysdatabases sysD join master..sysusages sysU on sysD.dbid = sysU.dbid 
-                               join master..sysdevices sysDv on sysU.vdevno = sysDv.vdevno 
-                               join master..monDeviceSpaceUsage monDevS on sysDv.vdevno = monDevS.VDevNo
-                               join master..monDeviceIO monDevI on monDevS.LogicalName = monDevI.LogicalName
-where sysD.name = 'BBVA_CONVERSION_DEBUG' order by sysU.lstart; -- get database mapping
-
-select LogicalName, Reads, APFReads, ReadTime, convert(numeric(10,0),ReadTime)/(Reads + APFReads) "Read_ms", 
-       Writes, WriteTime, case Writes when 0 then 0 else convert(numeric(10,0),WriteTime)/Writes end "Writes_ms", DevSemaphoreRequests, DevSemaphoreWaits  
-         from master..monDeviceIO monIO join master..sysdevices dev on monIO.LogicalName = dev.name 
-         join (select distinct u.vdevno from master..sysusages u join master..sysdatabases d on d.dbid = u.dbid where d.name = 'BBVA_CONVERSION_DEBUG') dev_used  on dev.vdevno = dev_used.vdevno; --IO speed information
          
 -- GET THE LOG SEMAPHORE
 select DBID, DBName, AppendLogRequests, AppendLogWaits, (convert(numeric(10,0),AppendLogWaits)/convert(numeric(10,0),AppendLogRequests))*100 as 'LogContention%'  
@@ -89,3 +107,7 @@ from sysobjects O
 where O.type = 'U'
 order by space_used_kb desc;
 
+-- GET l
+
+-- MISC queries
+select count(1) from COREPL_REP where M_MX_REF_JOB=299;
