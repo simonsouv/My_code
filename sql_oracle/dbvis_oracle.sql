@@ -1,4 +1,4 @@
-@desc DYN_AUDIT_REP;
+@desc COM_FUT_CUR_TRS;
 -- index definition
 select u1.TABLE_NAME, u1.TABLE_TYPE, u1.INDEX_NAME, u1.INDEX_TYPE, u1.UNIQUENESS, u2.COLUMN_NAME, u2.COLUMN_LENGTH, u2.DESCEND, u2.COLUMN_POSITION
 from user_indexes u1 join user_ind_columns u2 on u1.INDEX_NAME = u2.INDEX_NAME
@@ -24,7 +24,7 @@ select * from RDB_CLASS_DBF where M_TABLE_NAME='RS_MMSETH_DBF';
 
 -- 3.1 misc queries
 select M_MX_REF_JOB,count(*) from RC_MV_EXT_31_REP group by  M_MX_REF_JOB;
-delete from RC_MV_EXT_211_REP where M_MX_REF_JOB=331689;
-
-select M__ALIAS_,max(M__DATE_) from MPX_GN_DBF group by M__ALIAS_;
+select cmg.M_FUTURE, cmg.M_CURR, com.M_REFERENCE, com.M_CURR
+from CMG_GRPI_DBF cmg join COM_FUT_CUR_TRS com on cmg.M_FUTURE = com.M_REFERENCE
+where cmg.M_GTYPE=1024;
 

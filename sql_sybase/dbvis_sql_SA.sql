@@ -2,15 +2,16 @@ select @@version;
 select db_name();
 select db_id();
 select * from syslisteners;
-kill 326;
-sp_configure 'permission cache entries';
-sp_help sysdevices;
+kill 130;
+sp_configure 'per object statistics active';
+sp_help UDTB195_DBF_BKP;
 sp_helpdb;
 sp_helpindex TRN_HDR_DBF;
 sp_helprotect SIMON;
-sp_lock null,null,1;
+sp_lock 311,null,1;
 sp_spaceusage 'display','tranlog','syslogs';
 sp_who;
+sp_MxWho;
 
 sp_monitorconfig 'all';
 sp_monitor connection, diskio;
@@ -31,7 +32,9 @@ sp_helpcache;
 sp_logiosize 'all';
 
 -- GET OBJECT INFORMATION
-select name,id,type from sysobjects where name like '%FLT_MAP%';
+select name,id,uid,type,crdate from sysobjects where name like '%INDEX%';
+select name,id,uid,type,crdate from sysobjects where name like 'TABLE#LIST#%DBF';
+--select 'select "'+name+'", count(*) from '+name'+' union all' from sysobjects where name like 'PS_%_E' order by name;
 select object_name(1737782963);
 select db_id();
 
@@ -46,10 +49,10 @@ dbcc pglinkage(2,16473,0,2,0,1);
 select StatisticID, Statistic, InstanceID, EngineNumber, Sample, SteadyState, Avg_1min, Avg_5min, Avg_15min, Peak, Max_1min, Max_5min, Max_15min from master..monSysLoad; -- check especially Statistic 'run queue length'
 
 -- GET PROCESS INFORMATION
-select spid, kpid,status,hostname,program_name,hostprocess,cmd,cpu,physical_io,blocked,dbid,uid,tran_name,time_blocked,network_pktsz from master..sysprocesses where spid in (287);
-select * from master..monProcess where SPID=287 and KPID=708378906; -- Provides detailed statistics about processes that are currently executing or waiting. Empty if the SPID does nothing
-select * from master..monProcessActivity where SPID=287 and KPID=708378906; -- Provides detailed statistics about process activity
-select * from master..monProcessStatement where SPID=287 and KPID=708378906; -- Provides information about the statement currently executing
+select spid, kpid,status,hostname,program_name,hostprocess,cmd,cpu,physical_io,blocked,dbid,uid,tran_name,time_blocked,network_pktsz from master..sysprocesses where spid in (32);
+select * from master..monProcess where SPID=32 and KPID=1478164737; -- Provides detailed statistics about processes that are currently executing or waiting. Empty if the SPID does nothing
+select * from master..monProcessActivity where SPID=32 and KPID=1478164737; -- Provides detailed statistics about process activity
+select * from master..monProcessStatement where SPID=32 and KPID=1478164737; -- Provides information about the statement currently executing
 
 select p.Login,p.Application,p.Command,pa.ULCBytesWritten, pa.ULCFlushes, pa.ULCFlushFull,pa.ULCMaxUsage from master..monProcess p join master..monProcessActivity pa on p.SPID = pa.SPID and p.InstanceID = pa.InstanceID and p.KPID = pa.KPID
 where p.SPID=522; -- query to get ULC information about a SPID
@@ -98,8 +101,7 @@ select top 25 DBName, ObjectName, IndexID, LogicalReads, PhysicalWrites, PagesWr
 from master..monOpenObjectActivity order by HkgcPending desc; -- per table
          
 -- GET THE LOG SEMAPHORE
-select DBID, DBName, AppendLogRequests, AppendLogWaits, (convert(numeric(10,0),AppendLogWaits)/convert(numeric(10,0),AppendLogRequests))*100 as 'LogContention%'  
-from master..monOpenDatabases;
+select DBID, DBName, AppendLogRequests, AppendLogWaits, (convert(numeric(10,0),AppendLogWaits)/convert(numeric(10,0),AppendLogRequests))*100 as 'LogContention%' from master..monOpenDatabases;
 
 -- GET TABLE SIZE
 select top 20 O.name, O.loginame, space_used_kb=(used_pages(db_id(),O.id)*4) --space_used_kb contains space used by data and index
@@ -107,7 +109,11 @@ from sysobjects O
 where O.type = 'U'
 order by space_used_kb desc;
 
--- GET l
+-- GET CACHE INFORMATION
+select * from master..monCachedObject where DBName='tempdb' order by CachedKB desc;
 
 -- MISC queries
 select count(1) from COREPL_REP where M_MX_REF_JOB=299;
+
+select convert(varchar(30),o.name) AS table_name,row_count(db_id(), o.id) AS row_count,data_pages(db_id(), o.id, 0) AS pages, data_pages(db_id(), o.id, 0) * (@@maxpagesize/1024) AS kbs
+from sysobjects o where type = 'U' order by kbs desc
