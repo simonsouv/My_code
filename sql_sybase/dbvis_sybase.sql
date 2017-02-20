@@ -23,7 +23,7 @@ dbcc traceon(3604,9528); -- format the output of plancost
 set option show_missing_stats on;
 
 select * from sysprocesses where spid=148;
-select * from sysobjects where name like '%RPO_%'; --H399634_H1S
+select * from sysobjects where name like '%COMB%'; --H399634_H1S
 select * from syscolumns where id = 1309738675;
 select * from sysusers where uid=2;
 select db_name(), * from sysstatistics where id=(select object_id('ACC_EVTS_L_DBF'));
@@ -51,7 +51,9 @@ select 'select * from '+M_RFG_TABLE_NAME+' where '+M_RFG_FORMULA+' = 152940035;'
 select * from RDBCNSTR_KEY_DBF where M_TABLE_NAME like 'RS_MDRSR%';
 
 --3.1 queries
-select top 10 * from TRN_PFLD_DBF where M_LABEL like '%AJUSTESWAPLP%';
+select db_name(),count(*) from CR_CTRY_DBF;
+update TRN_PFLD_DBF set M_PROC_AREA=(select M_ID from TRN_CPDF_DBF where M_LABEL='>OURSELVES') where M_PROC_AREA in (141522,141524,141525,141527);
+select M_LABEL from TRN_PFLD_DBF where M_PROC_AREA in (141522,141524,141525,141527);
 update TRN_PFLD_DBF set M_LABEL='AJUSTESWAPLP',M_DSP_LABEL='AJUSTESWAPLP' where M_IDENTITY=2151;
 select convert(bigint,TIMESTAMP),M_COUNTRY from CR_CTRY_DBF order by M_COUNTRY;
 select count(1) from CR_CTRY_DBF where TIMESTAMP is null;
