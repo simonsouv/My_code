@@ -12,6 +12,7 @@ sp_lock 311,null,1;
 sp_spaceusage 'display','tranlog','syslogs';
 sp_who;
 sp_MxWho;
+sp_flushstats;
 
 sp_monitorconfig 'all';
 sp_monitor connection, diskio;
@@ -32,7 +33,7 @@ sp_helpcache;
 sp_logiosize 'all';
 
 -- GET OBJECT INFORMATION
-select name,id,uid,type,crdate from sysobjects where name like '%INDEX%';
+select name,id,uid,type,crdate from sysobjects where name like 'TRN_HDR%';
 select name,id,uid,type,crdate from sysobjects where name like 'TABLE#LIST#%DBF';
 --select 'select "'+name+'", count(*) from '+name'+' union all' from sysobjects where name like 'PS_%_E' order by name;
 select object_name(1737782963);
