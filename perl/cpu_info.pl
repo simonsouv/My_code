@@ -5,7 +5,9 @@
 
 use strict;
 
-my $cpuInfo='/proc/cpuinfo';
+# my $cpuInfo='/proc/cpuinfo'
+#my $cpuInfo='/cygdrive/d/Tmp/BBVA/PAC_STREAM/BBVA_MX.3_PRODUCTION_servers/Logs/Grid/cpu_info.txt';
+my $cpuInfo='/cygdrive/d/Tmp/BBVA/PAC_STREAM/BBVA_MX.3_PRODUCTION_servers/Logs/Bussines_Layer/systemInfo_lpmux510.log.txt';
 (open my $cpuInfoHandle,'<',$cpuInfo) or die"ERROR -- File $cpuInfo, $!\n";
 
 my @model=();

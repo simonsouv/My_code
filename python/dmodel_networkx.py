@@ -91,8 +91,7 @@ def main ():
         exit(1)
     search_shortest(s_startT,s_endT)
     #search_all_paths(s_startT,s_endT)
-    
-	
+
 #
 # MAIN PROGRAM
 #

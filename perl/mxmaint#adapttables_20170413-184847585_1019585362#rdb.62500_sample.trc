@@ -1,0 +1,100 @@
+
+                  =============================
+RDBMSAccess: ___________ Date: 2017-04-14 07:21:30
+DBXTrace: Adapt tables, Pre Adapt tables
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   2 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 2  Date: 2017-04-14 07:21:30
+select 1 from sysobjects where name = upper('TRN_DSKD_DBF')
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 2  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   1 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+select * from TPK0002543_26262281..TRN_DSKD_DBF (MetaData)
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   2 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 2  Date: 2017-04-14 07:21:30
+select * from TPK0002543_26262281..TRN_DSKD_DBF (MetaData)
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 2  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   2 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+select 1 from sysobjects where name = upper('TRN_STG_DBF')
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+select 1 from sysobjects where name = upper('TRN_DSKD2_DBF')
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   1 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+select * from TPK0002543_26262281..TRN_DSKD_DBF (MetaData)
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   2 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+truncate table TPK0002543_26262281..TRN_DSKD2_DBF
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   1 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+truncate table TPK0002543_26262281..TRN_DSKD2_DBF
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   1 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+select TIMESTAMP, M_IDENTITY = identity(10),T1.M_REFERENCE, T1.M_LABEL, T1.M_DESC, T1.M_PATH, T1.M_BOFLAG, T1.M_ACTIVITY, T1.M_ALIAS, T1.M_MD_SET, T1.M_MDS_LS, T1.M_ENTITIES, T1.M_DATE, T1.M_EOD_SHIFT, T1.M_GROUPS, T1.M_SETTING, T1.M_TIMEZONE, T1.M_MD_SETS, T1.M_CALCCYCLE, T1.M_PC into TPK0002543_26262281..TRN_DSKD2_DBF lock datarows from TRN_DSKD_DBF T1 
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 10:00:00  57 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+select 1 from sysobjects where name = upper('TRN_PC_DBF')
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   1 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+select * from TPK0002543_26262281..TRN_PC_DBF (MetaData)
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   1 ms
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+select * from TPK0002543_26262281..TRN_PC_DBF (MetaData)
+
+                  =============================
+ServerName: MX509ZN ServerType: Sybase DatabaseName: TPK0002543_26262281 RDBMSAccess: NATIVE_CTLIB ConnectionName: Mx0_INSTALL_62500_1 ConnectionNo: 1  Date: 2017-04-14 07:21:30
+Murex execution time: 00:00:00   1 ms

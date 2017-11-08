@@ -1,0 +1,4 @@
+select 1 from sysobjects where name = upper('TRN_DSKD_DBF')
+Murex execution time: 00:00:00   1 ms
+select * from TPK0002543_26262281..TRN_DSKD_DBF (MetaData)
+Murex execution time: 00:00:00   2 ms

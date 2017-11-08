@@ -1,0 +1,20 @@
+Murex execution time: 00:00:00   2 ms
+select * from TPK0002543_26262281..TRN_DSKD_DBF (MetaData)
+Murex execution time: 00:00:00   2 ms
+select 1 from sysobjects where name = upper('TRN_STG_DBF')
+select 1 from sysobjects where name = upper('TRN_DSKD2_DBF')
+Murex execution time: 00:00:00   1 ms
+select * from TPK0002543_26262281..TRN_DSKD_DBF (MetaData)
+Murex execution time: 00:00:00   2 ms
+truncate table TPK0002543_26262281..TRN_DSKD2_DBF
+Murex execution time: 00:00:00   1 ms
+truncate table TPK0002543_26262281..TRN_DSKD2_DBF
+Murex execution time: 00:00:00   1 ms
+select TIMESTAMP, M_IDENTITY = identity(10),T1.M_REFERENCE, T1.M_LABEL, T1.M_DESC, T1.M_PATH, T1.M_BOFLAG, T1.M_ACTIVITY, T1.M_ALIAS, T1.M_MD_SET, T1.M_MDS_LS, T1.M_ENTITIES, T1.M_DATE, T1.M_EOD_SHIFT, T1.M_GROUPS, T1.M_SETTING, T1.M_TIMEZONE, T1.M_MD_SETS, T1.M_CALCCYCLE, T1.M_PC into TPK0002543_26262281..TRN_DSKD2_DBF lock datarows from TRN_DSKD_DBF T1 
+Murex execution time: 10:00:00  57 ms
+select 1 from sysobjects where name = upper('TRN_PC_DBF')
+Murex execution time: 00:00:00   1 ms
+select * from TPK0002543_26262281..TRN_PC_DBF (MetaData)
+Murex execution time: 00:00:00   1 ms
+select * from TPK0002543_26262281..TRN_PC_DBF (MetaData)
+Murex execution time: 00:00:00   1 ms
