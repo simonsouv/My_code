@@ -48,7 +48,7 @@ check_temp_tables(){
   # execute the sql file generated
   isql -S $4 -U $5 -P $6 -D tempdb -w300 -i ${INPUT_SQL} -o ${OUTPUT_SQL}
   
-  printf "%-18s %s\n" "Date" "`date '+%Y/%m/%d %HH:%MM:%SS'`"
+  printf "%-18s %s\n" "Date" "`date '+%Y/%m/%d %H:%M:%S'`"
   printf "%-18s %s\n" "temp tables #" "`tail -1  ${OUTPUT_SQL} | tr -d ' '`"
   # if output file is empty then temp tables were removed
   #[ -s ${OUTPUT_SQL} ] && printf "check file %s for any remaining temp tables" "${OUTPUT_SQL}" || printf "all temp tables removed\n"
@@ -93,12 +93,14 @@ PS_APP_DIR=`grep ${PS_HOST} ${SERVERS_LIST} | cut -d';' -f 2`
 [ -z ${PS_APP_DIR} ] && exit_on_error "Cannot find Hostname in the file ${SERVERS_LIST}\n"
 
 if [ $CURRENT_SERVER == $PS_HOST ]; then
-  PS_LOG_FILE=`find ${PS_APP_DIR}/logs -name "scanner_client\.${PS_PID}\.log"`  
+  PS_LOG_FILE=`find ${PS_APP_DIR}/logs -name "scanner_client\.${PS_PID}\.log"`
+  [ -z ${PS_LOG_FILE} ] && exit_on_error "Processing script scanner_client log file not generated yet\n"
   FILE_TO_ANALYZE=$PS_LOG_FILE
 else 
   # the processing script was executed on a remote server
   # need to ssh to the target host get the corresponding log file
   PS_LOG_FILE=`ssh $PS_HOST "find ${PS_APP_DIR}/logs -name \"scanner_client\.${PS_PID}\.log\" "`
+  [ -z ${PS_LOG_FILE} ] && exit_on_error "Processing script scanner_client log file not generated yet\n"
   ssh $PS_HOST "cat $PS_LOG_FILE" > /tmp/`basename $PS_LOG_FILE`
   FILE_TO_ANALYZE=/tmp/`basename $PS_LOG_FILE`
 fi
