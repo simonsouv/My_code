@@ -63,11 +63,13 @@ def compare_xml_log(dir,logFile,zipFile,xmlTemplate,xmlDict,logDict,logContent):
         if diff:
             for i in diff:
                 if not check_config_already_imported(logContent,i):
-                    f.write("{};{};{};{};\n".\
-                             format(logFile,zipFile,xmlTemplate,i))
+                    f.write("{};{};{};{};{}\n".\
+                             format(logFile, zipFile, xmlTemplate, i, \
+                                    re.sub("^mx","MX",xmlDict[i])))
                 else:
-                    f.write("{};{};{};{};already imported\n".\
-                             format(logFile,zipFile,xmlTemplate,i))
+                    f.write("{};{};{};{};{};already imported\n".\
+                             format(logFile, zipFile, xmlTemplate, i, \
+                                    re.sub("^mx","MX",xmlDict[i])))
 
 # --- MAIN ---
 check_args()
@@ -77,7 +79,7 @@ logFiles = get_file_list(rootDir,"*.log")
 templateFiles = get_file_list(rootDir,"*.xml")
 
 with open(os.path.join(rootDir, 'result_diff.csv'), 'w') as f:
-    f.write("log file;zip file;template name;missing object;comment\n")
+    f.write("log file;zip file;template name;missing object ID;missing object name;comment\n")
 
 for currentLog in logFiles:
     print("current log file: {}".format(currentLog))
