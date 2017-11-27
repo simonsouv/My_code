@@ -4,10 +4,10 @@ select @@version;
 select @@spid;
 select db_name()as db_used , user_name();count(1) as total_rows from TRN_HDR_DBF;
 
-sp_help SE_TRDS_DBF; --COREPL_REP DYN_AUDIT_REP
+sp_help TRN_CPDF_NEW; --COREPL_REP DYN_AUDIT_REP
 sp_spaceused NPD_HDR_DBF, 1;
-sp_helpindex NPD_HDR_DBF;
-sp_helprotect;
+sp_helpindex TRN_CPDF_DBF;
+sp_helprotect SE_TRDS_DBF;
 sp_helpdb tempdb; MIG_MX;
 
 sp_helpuser;
@@ -31,16 +31,22 @@ dbcc cacheremove ('BBVA_PROD_REF','DPI_ID_DBF');
 set option show_missing_stats on;
 
 select * from sysprocesses where spid=148;
-select * from sysobjects where name like 'B610466%'; --H399634_H1S
-select * from syscolumns where id = 1309738675;
+select db_name()+'@'+@@servername 'Server details',name,crdate,type from sysobjects where name like 'hp440srv#613%'; --H399634_H1S
+select name,id from sysobjects where type='U' and name like 'TRN[_]CPDF[_]%';
+select * from syscolumns where id = 1929523372;
 select * from sysusers where uid=2;
 select db_name(), * from sysstatistics where id=(select object_id('ACC_EVTS_L_DBF'));
 select object_id('TRN_HDR_DBF');
+select * from systypes order by type;
 
 select row_count(db_id(),object_id('[PS_FX_RISK')); -- number of rows in a table
 select datachange('TRN_HDR_DBF',null,null); -- this query displays the % of data changes since the last update stats, good indicator to see if update statistics should be executed.
 select object_name(734751160);
 
+-- check crypted columns
+select obj.name, col.name, col.type, typ.name, col.length, case col.status when 0 then 'NOT NULL' when 3 then 'NULL' end
+from sysobjects obj join syscolumns col on obj.id = col.id join systypes typ on col.type = typ.type and col.usertype = typ.usertype
+where col.encrdate is not null;
 -- RDB scope SQL
 select * from RDB_OBJECT_DBF where M_CLASS_NAME in ('mx.statics.query.config.QueryTemplate');
 select * from RDB_OBJECT_DBF where M_OBJECT_ID='CM.243';
@@ -84,6 +90,7 @@ select * from DPI_ID_DBF where M_LABEL1='SPB';
 update DPI_ID_DBF set M_UNIQUE_ID=10155432 where M_LABEL1 = 'SPB' and M_LABEL2 = 'TRN_NB'; -- current value 10155432
 ---- TRN_HDR_DBF
 select distinct(M_TYPOLOGY) from TRN_HDR_DBF;
+select * from CONTRACT_DBF where M_REFERENCE=30007079;
 ---- VRS_INFO_DBF
 select * from VRS_INFO_DBF;
 ----TRN_DSKD_DBF
@@ -295,10 +302,44 @@ update NPD_HDR_DBF
 set M_USER = 'REALTIME'
 where M_USER not in (select M_LABEL from MX_USER_DBF) and M_USER <> ''; -- statement is failing because of duplicate key
 -- test the fix provided before the import sequence
+select * into NPD_HDR_DBF_BKP from NPD_HDR_DBF;
 update NPD_HDR_DBF
 set M_USER = ''
 where M_USER = 'TOTO' and M_PRC_MODE = 1;
 -- PROBLEM WITH ALTERNATE DATE
+select * from SE_ROOT_DBF where M_SE_LABEL = 'PERU 8.2 0826  '; -- check field M_SE_MARKET='DEUDA PEN' and M_SE_TRDCL='PEN BONDS'
+select * from SE_TRDC_DBF where M_SE_TRDCL='PEN BONDS ';
+select * from SE_TRDS_DBF where M_SE_TCS_L='STK 3,3   ';
+select * from SE_TRDS_DBF where M_SE_TCS_L='STK 3,3 SS';
+select * from SE_TRDC_DBF where M_SE_TRDCL='PEN BONDS0';
+-- correction to duplicate settlement and trading clause then assign these new objects to bonds
+---- duplicate the original settlement information
+insert into SE_TRDS_DBF(M_SE_TCS_L, M_SE_TCS_T, M_SE_SET, M_SE_O_SET_F, 
+M_SE_FS_RSF0, M_SE_FS_RSF1, M_SE_FS_RS0, M_SE_FS_RS1, M_SE_DCONV, 
+M_SE_CLEAR, M_SE_SEC_LS0, M_SE_SEC_LS1, M_SE_MARG_F, M_SE_EX_D_F, 
+M_SE_EX_D_R, M_SE_SHIFT, M_SE_CACONV, M_SE_SEC_LSF, M_SE_SEC_OLS, 
+M_SE_DPBTS_F, M_SE_EX_C_F, M_SE_EX_C_R)
+------ be carefull M_SE_TCS_L is only 10 chars length
+select 'STK 3,3 SS',M_SE_TCS_T, M_SE_SET, M_SE_O_SET_F,
+M_SE_FS_RSF0, M_SE_FS_RSF1, M_SE_FS_RS0, M_SE_FS_RS1, M_SE_DCONV, 
+M_SE_CLEAR, M_SE_SEC_LS0, M_SE_SEC_LS1, M_SE_MARG_F, M_SE_EX_D_F, 
+M_SE_EX_D_R, M_SE_SHIFT, M_SE_CACONV, M_SE_SEC_LSF, M_SE_SEC_OLS, 
+M_SE_DPBTS_F, M_SE_EX_C_F, M_SE_EX_C_R
+from SE_TRDS_DBF
+where M_SE_TCS_L = 'STK 3,3   ';
+---- duplicate the original trading clause pointing t0
+---- the settlement created above
+insert SE_TRDC_DBF(M_SE_TRDCL, M_SE_GROUP, M_SE_TYPE, M_SE_LO_F, 
+M_SE_OO_F, M_SE_FD, M_SE_TCS_L, M_SE_TCQ_L, M_SE_CUR)
+------ be carefull M_SE_TRDCL is only 10 chars length
+select 'PEN BONDS0',M_SE_GROUP, M_SE_TYPE, M_SE_LO_F, 
+M_SE_OO_F, M_SE_FD, 'STK 3,3 SS', M_SE_TCQ_L, M_SE_CUR
+from SE_TRDC_DBF
+where M_SE_TRDCL = 'PEN BONDS ';
+---- modify the bond to point to the new trading clause
+update SE_ROOT_DBF
+set M_SE_TRDCL = 'PEN BONDS0'
+where M_SE_LABEL = 'PERU 8.2 0826  ';
 
 select bond.M_SE_LABEL, tc.M_SE_TRDCL, stl.M_SE_TCS_L, udf.M_ALT_CONV_D -- list bond its alternate date, trading clause and settlement
 from SE_HEAD_DBF head 
@@ -309,9 +350,9 @@ from SE_HEAD_DBF head
 where head.M_SE_GROUP = 'Bond'
     and udf.M_ALT_CONV_D IS NOT NULL -- bond having an alternate
     and bond.M_SE_DE <> 'Y'-- bond is not dead
+    and stl.M_SE_TCS_L='STK 3,3' -- on a specific settlement
 order by stl.M_SE_TCS_L,bond.M_SE_LABEL;
-    -- and stl.M_SE_TCS_L='STK 3,3'; -- on a specific settlement
-
+    
 
 select stl.M_SE_TCS_L, udf.M_ALT_CONV_D,1 'count'-- list distinct settlement / alternate date
 from SE_HEAD_DBF head 
@@ -321,7 +362,7 @@ from SE_HEAD_DBF head
     join SE_TRDS_DBF stl on tc.M_SE_TCS_L = stl.M_SE_TCS_L
 where head.M_SE_GROUP = 'Bond'
     and udf.M_ALT_CONV_D IS NOT NULL -- bond having an alternate
-    --and bond.M_SE_DE <> 'Y' and head.M_SE_MAT > (select max(M_DATE) from TRN_DSKD_DBF)-- bond is not dead
+    and bond.M_SE_DE <> 'Y' and head.M_SE_MAT > (select max(M_DATE) from TRN_DSKD_DBF)-- bond is not dead
 order by stl.M_SE_TCS_L, udf.M_ALT_CONV_D;
 --group by tc.M_SE_TRDCL, stl.M_SE_TCS_L, udf.M_ALT_CONV_D;
     --and stl.M_SE_TCS_L='STK 3,3'; -- on a specific settlement;
@@ -337,3 +378,41 @@ where head.M_SE_GROUP = 'Bond'
     and bond.M_SE_DE <> 'Y' -- bond is not dead
     and stl.M_SE_TCS_L='STK 3,3' -- on a specific settlement
 group by udf.M_ALT_CONV_D;
+
+from SE_HEAD_DBF head 
+    join SE_ROOT_DBF bond on bond.M_SE_LABEL = head.M_SE_LABEL
+    join SE_TRDC_DBF tc on tc.M_SE_TRDCL = bond.M_SE_TRDCL
+    join TABLE#DATA#SECURITI_DBF udf on udf.M_SE_LABEL = head.M_SE_LABEL
+    join SE_TRDS_DBF stl on tc.M_SE_TCS_L = stl.M_SE_TCS_L;
+
+-- from Xavi
+SELECT A.M_SE_LABEL ,S.M_SE_CODE,S.M_SE_MAT,S.M_SE_DE,S.M_SE_DED ,A.M_SE_DE,A.M_SE_DED,A.M_SE_MARKET, A.M_SE_TRDCL, A.M_SE_TCS_L,B.M_SE_TCS_L, T.M_ALT_CONV_D 
+FROM SE_ROOT_DBF A, SE_TRDC_DBF B,SE_HEAD_DBF S,TABLE#DATA#SECURITI_DBF T 
+WHERE A.M_SE_TRDCL =B.M_SE_TRDCL AND A.M_SE_LABEL=S.M_SE_LABEL AND A.M_SE_LABEL*=T.M_SE_LABEL AND S.M_SE_GROUP='Bond' 
+and A.M_SE_LABEL='ACAFP 7 0849';
+
+-- analysis based on Xavi's remark
+--- store in a table the bond that overide the settlement clause in SE_ROOT_DBF
+drop table sst_bnd_tcs_l_override;
+select head.M_SE_LABEL as 'bond label', bond.M_SE_TCS_L as 'settlement', udf.M_ALT_CONV_D as 'alternate date'
+into sst_bnd_tcs_l_override
+from SE_HEAD_DBF head 
+    join SE_ROOT_DBF bond on bond.M_SE_LABEL = head.M_SE_LABEL
+    join TABLE#DATA#SECURITI_DBF udf on udf.M_SE_LABEL = head.M_SE_LABEL
+where head.M_SE_GROUP = 'Bond'
+    and udf.M_ALT_CONV_D IS NOT NULL -- bond having an alternate
+    and bond.M_SE_DE <> 'Y' -- bond is not dead
+    and bond.M_SE_TCS_L <> '';
+-- case 716359
+select count(*) from ERM_SA_RRAO_INP_REP;
+select top 50 * from ERM_SA_RRAO_INP_REP;
+-- case 713170
+select M_LABEL from MX_USER_DBF;
+select top 10 * from NPD_HDR_DBF;
+select M_LABEL,M_USER from NPD_HDR_DBF where M_USER not in (select M_LABEL from MX_USER_DBF) and M_USER <> '' group by M_LABEL,M_USER;
+select M_LABEL,M_USER from NPD_HDR_DBF where M_OWNER not in (select M_LABEL from MX_USER_DBF) and M_OWNER <> '' group by M_LABEL,M_USER;
+-- decypher BBVA 2.11 DB
+create index TRN_CPDF_CS0 on TRN_CPDF_DBF(M_ID);
+create unique clustered index TRN_CPDF_ND0 on TRN_CPDF_DBF(M_LABEL);
+create index TRN_CPDF_ND1on TRN_CPDF_DBF(M_ID, M_LABEL);
+select count(*) from TRN_CPDF_NEW;

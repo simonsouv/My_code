@@ -1,0 +1,57 @@
+/*Choose a cool Font Text Scheme*/
+body{
+  font-size: 20px;
+  /*background-color: #EF476F;*/
+}
+
+h1{
+  font-family: 'Sacramento' , cursive;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.art{
+  margin: 20px 20px 20px 20px;
+}
+td{
+  height: 400px;
+  width: 200px;
+  padding: 20px 20px 20px 20px;
+  border: 6px solid white;
+}
+
+#one{
+  background-color: #EF476F;
+}
+
+#two{
+  background-color: #FFD166;
+}
+
+#three{
+  background-color: #06D6A0;
+}
+
+#four{
+  background-color: #118AB2;
+}
+
+#five{
+  background-color: #073B4C;
+}
+/*Choose a color palette from here:
+https://coolors.co/
+or create your own here:
+paletton.com/*/
+
+/*
+I chose:
+
+#247BA0
+#70C1B3
+#B2DBBF
+#F3FFBD
+#FF1654
+
+*/

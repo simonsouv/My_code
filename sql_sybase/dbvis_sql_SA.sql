@@ -3,7 +3,7 @@ select db_name();
 select db_id();
 select getdate();
 select @@servername,* from master..syslisteners;
-kill 403;
+kill 106;
 setuser 'MUREXDB';
 
 sp_transactions;
@@ -13,9 +13,9 @@ sp_helpdb;
 sp_helpindex RT_INDEX_DBF;
 sp_helprotect SIMON;
 sp_helpuser;
-sp_lock 301,null,@verbose=1;
+sp_lock @verbose=1;
 sp_spaceusage 'display','tranlog','syslogs';
-sp_who;
+sp_who '30';
 sp_MxWho;
 sp_MxDatabase;
 sp_flushstats;
@@ -70,8 +70,8 @@ sp_logiosize 'all';
 sp_showplan 332,NULL,NULL,NULL;
 
 -- GET OBJECT INFORMATION
-select name,id,uid,type,crdate from sysobjects where name like '%SST%';
-select name,id,uid,type,crdate from sysobjects where type = 'U';
+select name,id,uid,type,crdate from sysobjects where uid = 5;
+select uid,count(uid) from sysobjects where type = 'U' group by uid;
 --select 'select "'+name+'", count(*) from '+name'+' union all' from sysobjects where name like 'PS_%_E' order by name;
 select object_name(1322288214);
 select * from sysindexes where name like '%INDEX%ND0%';
@@ -193,7 +193,7 @@ from sysobjects obj join sysusers usr on obj.uid = usr.uid
 where obj.type='U'
 group by usr.name;
 
-select name from sysobjects where uid = 5;
+select * from sysobjects where name='hp440srv#16628#Z0001_TMP';
 
 select db_name()+'@'+@@servername as db,obj.name as tabname, usr.name as owner 
 from sysobjects obj join sysusers usr on obj.uid = usr.uid
