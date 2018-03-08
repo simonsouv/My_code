@@ -6,8 +6,9 @@ SAR_OUTPUT=./inputs
 SAR_COMM='sar -A'
 
 # default is to execute sar for 1 hour every 20s
+# change the value 3600 is you want sar to run for a shorter time
 SAR_INT=20
-SAR_COUNT=$(( 3600/${SAR_INT} ))
+SAR_COUNT=$(( 1800/${SAR_INT} ))
 HOST=$(uname -n)
 OS=$(uname -s)
 

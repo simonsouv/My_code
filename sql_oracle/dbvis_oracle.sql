@@ -23,8 +23,14 @@ select * from RDB_CLASS_DBF where M_CLASS_NAME=(select M_CLASS_NAME from RDB_OBJ
 select * from RDB_CLASS_DBF where M_TABLE_NAME='RS_MMSETH_DBF';
 
 -- 3.1 misc queries
-select M_MX_REF_JOB,count(*) from RC_MV_EXT_31_REP group by  M_MX_REF_JOB;
-select cmg.M_FUTURE, cmg.M_CURR, com.M_REFERENCE, com.M_CURR
-from CMG_GRPI_DBF cmg join COM_FUT_CUR_TRS com on cmg.M_FUTURE = com.M_REFERENCE
-where cmg.M_GTYPE=1024;
+select * from MX_USER_DBF where M_LABEL='INSTALL';
+select * from MX_USER_GROUP_DBF where rownum < 10;
+select * from MX_GROUP_DBF where rownum < 10;
+select u.M_LABEL as "User", g.M_LABEL as "Group"
+from MX_USER_DBF u inner join MX_USER_GROUP_DBF ug on u.M_REFERENCE = ug.M_USER_ID inner join MX_GROUP_DBF g on ug.M_GROUP_ID = g.M_REFERENCE
+where u.M_LABEL='INSTALL';
 
+@desc USER_OBJECTS;
+select * from USER_OBJECTS where OBJECT_NAME like '%TRN_HDR%';
+select * from ALL_OBJECT_TABLES; where TABLE_NAME like '%TRN_HDR%';
+select count(*) from TRN_HDR_DBF;

@@ -3,19 +3,20 @@ select db_name();
 select db_id();
 select getdate();
 select @@servername,* from master..syslisteners;
-kill 106;
+kill 224;
 setuser 'MUREXDB';
 
+sp_helpdevice;
 sp_transactions;
 sp_configure 'enable housekeeper';,131072;
-sp_help sysusers;
-sp_helpdb;
+sp_help monDeviceIO;
+sp_helpdb BBVA_UAT2_DM;
 sp_helpindex RT_INDEX_DBF;
 sp_helprotect SIMON;
 sp_helpuser;
 sp_lock @verbose=1;
 sp_spaceusage 'display','tranlog','syslogs';
-sp_who '30';
+sp_who '224';
 sp_MxWho;
 sp_MxDatabase;
 sp_flushstats;
@@ -23,10 +24,16 @@ sp_object_stats '00:05:00';
 sp_showplan 496, null, null, null;
 
 drop database P7_TMP_MLC;
-create database BBVA_ENV_LIKE_DM on MUREXFS60=1500 for LOAD;
-load database BBVA_ENV_LIKE_DM from 'compress::/net/fs8612/alloc0001557/dump/FEB_2.11_To_Convert/DM/DM_211.cmp';
-dump database BBVA_ENV_LIKE_DM to 'compress::/net/mx4120vm//data1/fromBBVA/LAB16_CONVERSION/LAB16_CONVERSION//DM.cmp';
-online database BBVA_ENV_LIKE_DM;
+create database BBVA_UAT2_MLC on MUREXFS55=1024, MUREXFS55=1000 for load;
+load database MIG_MX from 'compress::/tmp/bef_rof.cmp.1'
+stripe on 'compress::/tmp/bef_rof.cmp.2'
+stripe on 'compress::/tmp/bef_rof.cmp.3'
+stripe on 'compress::/tmp/bef_rof.cmp.4';
+dump database MIG_MX to 'compress::/tmp/bef_rof.cmp.1'
+stripe on 'compress::/tmp/bef_rof.cmp.2'
+stripe on 'compress::/tmp/bef_rof.cmp.3'
+stripe on 'compress::/tmp/bef_rof.cmp.4';
+online database BBVA_UAT2_MLC;
 
 sp_dboption 'MIG_MX','single',false;
 checkpoint MIG_MX;
@@ -71,12 +78,12 @@ sp_showplan 332,NULL,NULL,NULL;
 
 -- GET OBJECT INFORMATION
 select name,id,uid,type,crdate from sysobjects where uid = 5;
-select uid,count(uid) from sysobjects where type = 'U' group by uid;
+select name from sysobjects where type = 'U' and name like 'RPO_DM%';group by uid;
 --select 'select "'+name+'", count(*) from '+name'+' union all' from sysobjects where name like 'PS_%_E' order by name;
 select object_name(1322288214);
 select * from sysindexes where name like '%INDEX%ND0%';
 select db_id();
-
+select * from master..syslogshold;
 -- DBCC COMMAND
 dbcc traceon(3604);
 dbcc sqltext(883);
@@ -88,10 +95,10 @@ dbcc pglinkage(2,16473,0,2,0,1);
 select StatisticID, Statistic, InstanceID, EngineNumber, Sample, SteadyState, Avg_1min, Avg_5min, Avg_15min, Peak, Max_1min, Max_5min, Max_15min from master..monSysLoad; -- check especially Statistic 'run queue length'
 
 -- GET PROCESS INFORMATION
-select * from master..sysprocesses;
-select spid, kpid,status,hostname,program_name,hostprocess,cmd,cpu,physical_io,blocked,dbid,uid,tran_name,time_blocked,network_pktsz from master..sysprocesses where spid in (17);
+select * from master..sysprocesses where spid=224;
+select spid, kpid,status,hostname,program_name,hostprocess,cmd,cpu,physical_io,blocked,dbid,uid,tran_name,time_blocked,network_pktsz from master..sysprocesses where spid in (270);
 select * from master..monProcess where SPID=17; and KPID=1478164737; -- Provides detailed statistics about processes that are currently executing or waiting. Empty if the SPID does nothing
-select * from master..monProcessActivity where SPID=332; and KPID=1478164737; -- Provides detailed statistics about process activity
+select * from master..monProcessActivity where SPID=270 and KPID=177144290; -- Provides detailed statistics about process activity
 select * from master..monProcessStatement where SPID=32 and KPID=1478164737; -- Provides information about the statement currently executing
 
 select p.Login,p.Application,p.Command,pa.ULCBytesWritten, pa.ULCFlushes, pa.ULCFlushFull,pa.ULCMaxUsage from master..monProcess p join master..monProcessActivity pa on p.SPID = pa.SPID and p.InstanceID = pa.InstanceID and p.KPID = pa.KPID
@@ -142,7 +149,12 @@ from master..monOpenObjectActivity order by HkgcPending desc; -- per table
          
 -- GET THE LOG SEMAPHORE
 select DBID, DBName, AppendLogRequests, AppendLogWaits, (convert(numeric(10,0),AppendLogWaits)/convert(numeric(10,0),AppendLogRequests))*100 as 'LogContention%' from master..monOpenDatabases;
-
+select mon.LogicalName,u.segmap, mon.Reads,mon.Writes, mon.Reads + mon.Writes 'IOs', mon.ReadTime, mon.WriteTime, mon.IOTime, mon.IOTime / (mon.Reads + mon.Writes) 'ms_per_IO'
+from master..monDeviceIO mon 
+join master..sysdevices d on mon.LogicalName = d.name 
+join master..sysusages u on d.vdevno = u.vdevno
+where dbid = db_id('BBVA_UAT2_DM') and u.segmap = 4;
+select logical
 -- GET TABLE SIZE
 ---= sybase 15
 select top 50 O.name, O.loginame, space_used_kb=(used_pages(db_id(),O.id)*4) --space_used_kb contains space used by data and index
@@ -192,10 +204,3 @@ select db_name()+'@'+@@servername as db, usr.uid, usr.name as owner, count(*)
 from sysobjects obj join sysusers usr on obj.uid = usr.uid
 where obj.type='U'
 group by usr.name;
-
-select * from sysobjects where name='hp440srv#16628#Z0001_TMP';
-
-select db_name()+'@'+@@servername as db,obj.name as tabname, usr.name as owner 
-from sysobjects obj join sysusers usr on obj.uid = usr.uid
-where obj.type='U'; and (name like '%2540%' or name like '%2541%' or name like '%2542%' or name like '%2543%');
-group by convert(char(15),name);

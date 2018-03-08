@@ -6,11 +6,11 @@ SELECT /*+ gather_plan_statistics */
 OSUSER, SERIAL#, SID, executions,sql.SQL_ID ,sql.child_number, last_active_time, elapsed_time, SQL_TEXT 
 FROM V$SESSION sess JOIN V$SQL sql 
 on  (sess.SQL_ID = sql.SQL_ID) 
-where sess.SID=597; -- and sess.STATUS = 'ACTIVE' -- retrieve information about running SQL statements
+where sess.SID=1901; -- and sess.STATUS = 'ACTIVE' -- retrieve information about running SQL statements
 select plan_table_output
 from   v$sql s,
        table(dbms_xplan.display_cursor(s.sql_id, s.child_number,'typical')) t
-where  s.sql_id = '2cbkty6qcgzxc'; --get the execution plan for a SQL identifier retrieved above
+where  s.sql_id = 'fubw4zpx2nxfg'; --get the execution plan for a SQL identifier retrieved above
 
 -- **************************************
 -- list the running SQL and their runTime
@@ -64,3 +64,5 @@ where
    upper(sql_text) like '%ACT_BAT_DBF%'
 order by disk_reads desc;
 select * from table(dbms_xplan.display_awr('4vj1jmvjuwxxh'));
+
+select * from DBA_TABLESPACES;
