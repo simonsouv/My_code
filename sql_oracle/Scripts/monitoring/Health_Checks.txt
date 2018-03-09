@@ -1,0 +1,23 @@
+ERROR:
+ORA-12162: TNS:net service name is incorrectly specified 
+
+
+Warning: You are no longer connected to ORACLE.
+SP2-0640: Not connected
+SP2-0640: Not connected
+SP2-0640: Not connected
+SP2-0640: Not connected
+SP2-0640: Not connected
+SP2-0640: Not connected
+SP2-0640: Not connected
+
+SP2-0640: Not connected
+
+Tablespaces nearing 0% free
+***************************
+SP2-0640: Not connected
+
+
+Tables and Indexes nearing MAX_EXTENTS
+**************************************
+SP2-0640: Not connected
