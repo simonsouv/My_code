@@ -4,6 +4,7 @@ select u1.TABLE_NAME, u1.TABLE_TYPE, u1.INDEX_NAME, u1.INDEX_TYPE, u1.UNIQUENESS
 from user_indexes u1 join user_ind_columns u2 on u1.INDEX_NAME = u2.INDEX_NAME
 where u1.TABLE_NAME='ACT_DYN_DBF'
 order by u1.INDEX_NAME,u2.COLUMN_POSITION;
+select * from user_indexes where TABLE_NAME = 'STPDOC_ENTRY_TABLE';
 
 -- statistics information
 -- dbms_stats.gather_table_stats('MXPRD_JAN16','ACT_DYN_DBF',degree=>'AUTO_DEGREE'); -- command to gather statistics on a table (search man page for all possible args)

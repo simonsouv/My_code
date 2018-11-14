@@ -1,0 +1,1444 @@
+Mon Sep 24 23:57:40 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     498730      18140          0       1508     268765
+-/+ buffers/cache:     228455     288415
+Swap:        32767          0      32767	
+Tue Sep 25 00:00:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     494137      22733          0       1509     263477
+-/+ buffers/cache:     229151     287719
+Swap:        32767          0      32767	
+Tue Sep 25 00:01:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     493100      23770          0       1509     263735
+-/+ buffers/cache:     227855     289015
+Swap:        32767          0      32767	
+Tue Sep 25 00:02:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     502954      13916          0       1509     266503
+-/+ buffers/cache:     234941     281929
+Swap:        32767          0      32767	
+Tue Sep 25 00:03:08 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     503907      12963          0       1509     256621
+-/+ buffers/cache:     245776     271094
+Swap:        32767          0      32767	
+Tue Sep 25 00:04:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     501235      15635          0       1509     251840
+-/+ buffers/cache:     247885     268985
+Swap:        32767          0      32767	
+Tue Sep 25 00:05:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     503210      13659          0       1509     254266
+-/+ buffers/cache:     247435     269435
+Swap:        32767          0      32767	
+Tue Sep 25 00:06:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     504787      12083          0       1509     256314
+-/+ buffers/cache:     246963     269907
+Swap:        32767          0      32767	
+Tue Sep 25 00:07:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     495184      21686          0       1509     248130
+-/+ buffers/cache:     245544     271326
+Swap:        32767          0      32767	
+Tue Sep 25 00:08:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     494451      22418          0       1509     248306
+-/+ buffers/cache:     244635     272235
+Swap:        32767          0      32767	
+Tue Sep 25 00:09:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     494078      22792          0       1509     248444
+-/+ buffers/cache:     244124     272746
+Swap:        32767          0      32767	
+Tue Sep 25 00:10:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     492851      24019          0       1509     248171
+-/+ buffers/cache:     243170     273700
+Swap:        32767          0      32767	
+Tue Sep 25 00:11:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490739      26131          0       1509     247975
+-/+ buffers/cache:     241254     275616
+Swap:        32767          0      32767	
+Tue Sep 25 00:12:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490480      26390          0       1509     248363
+-/+ buffers/cache:     240607     276263
+Swap:        32767          0      32767	
+Tue Sep 25 00:13:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490002      26868          0       1509     248373
+-/+ buffers/cache:     240119     276751
+Swap:        32767          0      32767	
+Tue Sep 25 00:14:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490688      26182          0       1509     248394
+-/+ buffers/cache:     240784     276086
+Swap:        32767          0      32767	
+Tue Sep 25 00:15:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490941      25929          0       1509     248456
+-/+ buffers/cache:     240975     275895
+Swap:        32767          0      32767	
+Tue Sep 25 00:16:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490243      26627          0       1509     248388
+-/+ buffers/cache:     240345     276525
+Swap:        32767          0      32767	
+Tue Sep 25 00:17:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490334      26536          0       1509     248319
+-/+ buffers/cache:     240504     276366
+Swap:        32767          0      32767	
+Tue Sep 25 00:18:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490568      26302          0       1509     248415
+-/+ buffers/cache:     240643     276227
+Swap:        32767          0      32767	
+Tue Sep 25 00:19:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490125      26745          0       1509     248549
+-/+ buffers/cache:     240066     276804
+Swap:        32767          0      32767	
+Tue Sep 25 00:20:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     489781      27089          0       1509     248483
+-/+ buffers/cache:     239787     277083
+Swap:        32767          0      32767	
+Tue Sep 25 00:21:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     489507      27363          0       1509     248250
+-/+ buffers/cache:     239747     277123
+Swap:        32767          0      32767	
+Tue Sep 25 00:22:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     488521      28349          0       1509     248429
+-/+ buffers/cache:     238582     278288
+Swap:        32767          0      32767	
+Tue Sep 25 00:23:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     488590      28280          0       1509     248527
+-/+ buffers/cache:     238553     278317
+Swap:        32767          0      32767	
+Tue Sep 25 00:24:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     488301      28569          0       1509     248623
+-/+ buffers/cache:     238167     278702
+Swap:        32767          0      32767	
+Tue Sep 25 00:25:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     487522      29348          0       1509     248846
+-/+ buffers/cache:     237165     279705
+Swap:        32767          0      32767	
+Tue Sep 25 00:26:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486288      30582          0       1509     248615
+-/+ buffers/cache:     236162     280708
+Swap:        32767          0      32767	
+Tue Sep 25 00:27:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     485878      30992          0       1509     248584
+-/+ buffers/cache:     235784     281086
+Swap:        32767          0      32767	
+Tue Sep 25 00:28:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     485711      31159          0       1509     248639
+-/+ buffers/cache:     235562     281308
+Swap:        32767          0      32767	
+Tue Sep 25 00:29:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486289      30581          0       1509     248694
+-/+ buffers/cache:     236084     280786
+Swap:        32767          0      32767	
+Tue Sep 25 00:30:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486251      30619          0       1509     248625
+-/+ buffers/cache:     236115     280755
+Swap:        32767          0      32767	
+Tue Sep 25 00:31:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486696      30174          0       1509     248479
+-/+ buffers/cache:     236707     280163
+Swap:        32767          0      32767	
+Tue Sep 25 00:32:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486666      30204          0       1509     248525
+-/+ buffers/cache:     236630     280240
+Swap:        32767          0      32767	
+Tue Sep 25 00:33:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486556      30314          0       1509     248591
+-/+ buffers/cache:     236455     280415
+Swap:        32767          0      32767	
+Tue Sep 25 00:34:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486237      30633          0       1509     248645
+-/+ buffers/cache:     236082     280788
+Swap:        32767          0      32767	
+Tue Sep 25 00:35:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486473      30397          0       1509     248859
+-/+ buffers/cache:     236104     280765
+Swap:        32767          0      32767	
+Tue Sep 25 00:36:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     485709      31161          0       1509     248626
+-/+ buffers/cache:     235572     281298
+Swap:        32767          0      32767	
+Tue Sep 25 00:37:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     485873      30997          0       1509     248680
+-/+ buffers/cache:     235682     281188
+Swap:        32767          0      32767	
+Tue Sep 25 00:38:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     485109      31761          0       1509     248739
+-/+ buffers/cache:     234859     282010
+Swap:        32767          0      32767	
+Tue Sep 25 00:39:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     484828      32041          0       1509     248741
+-/+ buffers/cache:     234577     282293
+Swap:        32767          0      32767	
+Tue Sep 25 00:40:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     484698      32172          0       1509     248672
+-/+ buffers/cache:     234515     282355
+Swap:        32767          0      32767	
+Tue Sep 25 00:41:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     484330      32540          0       1509     248480
+-/+ buffers/cache:     234339     282531
+Swap:        32767          0      32767	
+Tue Sep 25 00:42:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     483994      32876          0       1509     248657
+-/+ buffers/cache:     233827     283042
+Swap:        32767          0      32767	
+Tue Sep 25 00:43:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     483799      33071          0       1509     248666
+-/+ buffers/cache:     233623     283247
+Swap:        32767          0      32767	
+Tue Sep 25 00:44:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     483675      33195          0       1509     248722
+-/+ buffers/cache:     233442     283428
+Swap:        32767          0      32767	
+Tue Sep 25 00:45:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     482712      34158          0       1509     248820
+-/+ buffers/cache:     232382     284488
+Swap:        32767          0      32767	
+Tue Sep 25 00:46:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     482529      34341          0       1510     248792
+-/+ buffers/cache:     232226     284644
+Swap:        32767          0      32767	
+Tue Sep 25 00:47:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     480884      35986          0       1510     248800
+-/+ buffers/cache:     230573     286297
+Swap:        32767          0      32767	
+Tue Sep 25 00:48:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     481062      35808          0       1510     248895
+-/+ buffers/cache:     230656     286214
+Swap:        32767          0      32767	
+Tue Sep 25 00:49:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     480803      36067          0       1510     249001
+-/+ buffers/cache:     230291     286579
+Swap:        32767          0      32767	
+Tue Sep 25 00:50:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     479760      37110          0       1510     248727
+-/+ buffers/cache:     229522     287348
+Swap:        32767          0      32767	
+Tue Sep 25 00:51:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     468549      48321          0       1510     238084
+-/+ buffers/cache:     228955     287915
+Swap:        32767          0      32767	
+Tue Sep 25 00:52:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     468977      47893          0       1510     238188
+-/+ buffers/cache:     229278     287592
+Swap:        32767          0      32767	
+Tue Sep 25 00:53:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     469677      47193          0       1510     238595
+-/+ buffers/cache:     229571     287299
+Swap:        32767          0      32767	
+Tue Sep 25 00:54:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     470466      46404          0       1510     239697
+-/+ buffers/cache:     229259     287611
+Swap:        32767          0      32767	
+Tue Sep 25 00:55:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     471315      45555          0       1510     239810
+-/+ buffers/cache:     229994     286876
+Swap:        32767          0      32767	
+Tue Sep 25 00:56:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     473113      43757          0       1510     239701
+-/+ buffers/cache:     231901     284968
+Swap:        32767          0      32767	
+Tue Sep 25 00:57:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     473036      43834          0       1510     239713
+-/+ buffers/cache:     231812     285058
+Swap:        32767          0      32767	
+Tue Sep 25 00:58:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     472758      44112          0       1510     239769
+-/+ buffers/cache:     231478     285392
+Swap:        32767          0      32767	
+Tue Sep 25 00:59:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     471953      44917          0       1510     240013
+-/+ buffers/cache:     230430     286440
+Swap:        32767          0      32767	
+Tue Sep 25 01:00:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     471323      45547          0       1510     239753
+-/+ buffers/cache:     230059     286811
+Swap:        32767          0      32767	
+Tue Sep 25 01:01:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     470373      46497          0       1510     238345
+-/+ buffers/cache:     230517     286353
+Swap:        32767          0      32767	
+Tue Sep 25 01:02:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     471908      44962          0       1510     238359
+-/+ buffers/cache:     232038     284832
+Swap:        32767          0      32767	
+Tue Sep 25 01:03:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     470961      45908          0       1510     237389
+-/+ buffers/cache:     232062     284808
+Swap:        32767          0      32767	
+Tue Sep 25 01:04:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     469467      47403          0       1510     236023
+-/+ buffers/cache:     231933     284937
+Swap:        32767          0      32767	
+Tue Sep 25 01:05:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     468115      48755          0       1510     234347
+-/+ buffers/cache:     232257     284613
+Swap:        32767          0      32767	
+Tue Sep 25 01:06:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     465444      51426          0       1510     231547
+-/+ buffers/cache:     232387     284483
+Swap:        32767          0      32767	
+Tue Sep 25 01:07:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     463035      53835          0       1510     229178
+-/+ buffers/cache:     232346     284524
+Swap:        32767          0      32767	
+Tue Sep 25 01:08:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453087      63783          0       1510     219378
+-/+ buffers/cache:     232199     284671
+Swap:        32767          0      32767	
+Tue Sep 25 01:09:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     451111      65759          0       1510     217575
+-/+ buffers/cache:     232025     284845
+Swap:        32767          0      32767	
+Tue Sep 25 01:10:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     449079      67791          0       1510     215580
+-/+ buffers/cache:     231987     284883
+Swap:        32767          0      32767	
+Tue Sep 25 01:11:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     445805      71065          0       1510     212957
+-/+ buffers/cache:     231337     285533
+Swap:        32767          0      32767	
+Tue Sep 25 01:12:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     446021      70849          0       1510     213096
+-/+ buffers/cache:     231415     285455
+Swap:        32767          0      32767	
+Tue Sep 25 01:13:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     445682      71188          0       1510     213190
+-/+ buffers/cache:     230981     285889
+Swap:        32767          0      32767	
+Tue Sep 25 01:14:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     445238      71631          0       1510     213125
+-/+ buffers/cache:     230602     286268
+Swap:        32767          0      32767	
+Tue Sep 25 01:15:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     445712      71158          0       1510     213297
+-/+ buffers/cache:     230904     285966
+Swap:        32767          0      32767	
+Tue Sep 25 01:16:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     445352      71517          0       1510     213183
+-/+ buffers/cache:     230658     286211
+Swap:        32767          0      32767	
+Tue Sep 25 01:17:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     445406      71464          0       1510     213735
+-/+ buffers/cache:     230160     286710
+Swap:        32767          0      32767	
+Tue Sep 25 01:18:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     448371      68499          0       1510     214897
+-/+ buffers/cache:     231963     284907
+Swap:        32767          0      32767	
+Tue Sep 25 01:19:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     450280      66590          0       1510     216725
+-/+ buffers/cache:     232043     284826
+Swap:        32767          0      32767	
+Tue Sep 25 01:20:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     452975      63895          0       1510     219264
+-/+ buffers/cache:     232200     284670
+Swap:        32767          0      32767	
+Tue Sep 25 01:21:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454866      62004          0       1510     221301
+-/+ buffers/cache:     232054     284816
+Swap:        32767          0      32767	
+Tue Sep 25 01:22:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455779      61091          0       1510     222551
+-/+ buffers/cache:     231716     285153
+Swap:        32767          0      32767	
+Tue Sep 25 01:23:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     457382      59488          0       1510     223913
+-/+ buffers/cache:     231958     284912
+Swap:        32767          0      32767	
+Tue Sep 25 01:24:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     458600      58270          0       1510     225371
+-/+ buffers/cache:     231718     285152
+Swap:        32767          0      32767	
+Tue Sep 25 01:25:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460010      56860          0       1510     226777
+-/+ buffers/cache:     231722     285148
+Swap:        32767          0      32767	
+Tue Sep 25 01:26:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     461045      55825          0       1510     227878
+-/+ buffers/cache:     231656     285213
+Swap:        32767          0      32767	
+Tue Sep 25 01:27:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     461524      55346          0       1510     228697
+-/+ buffers/cache:     231316     285554
+Swap:        32767          0      32767	
+Tue Sep 25 01:28:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     462167      54703          0       1510     229333
+-/+ buffers/cache:     231323     285547
+Swap:        32767          0      32767	
+Tue Sep 25 01:29:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     463088      53782          0       1510     230311
+-/+ buffers/cache:     231266     285604
+Swap:        32767          0      32767	
+Tue Sep 25 01:30:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     464045      52825          0       1510     231285
+-/+ buffers/cache:     231248     285622
+Swap:        32767          0      32767	
+Tue Sep 25 01:31:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     465249      51621          0       1510     232284
+-/+ buffers/cache:     231454     285416
+Swap:        32767          0      32767	
+Tue Sep 25 01:32:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     466304      50566          0       1510     233636
+-/+ buffers/cache:     231157     285712
+Swap:        32767          0      32767	
+Tue Sep 25 01:33:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     467880      48990          0       1510     235109
+-/+ buffers/cache:     231259     285611
+Swap:        32767          0      32767	
+Tue Sep 25 01:34:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     468973      47897          0       1510     236292
+-/+ buffers/cache:     231170     285700
+Swap:        32767          0      32767	
+Tue Sep 25 01:35:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     470306      46564          0       1510     237558
+-/+ buffers/cache:     231237     285633
+Swap:        32767          0      32767	
+Tue Sep 25 01:36:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     471013      45857          0       1510     238454
+-/+ buffers/cache:     231048     285822
+Swap:        32767          0      32767	
+Tue Sep 25 01:37:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     472317      44553          0       1510     239614
+-/+ buffers/cache:     231192     285678
+Swap:        32767          0      32767	
+Tue Sep 25 01:38:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     473072      43798          0       1510     240475
+-/+ buffers/cache:     231085     285785
+Swap:        32767          0      32767	
+Tue Sep 25 01:39:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     474064      42805          0       1510     241701
+-/+ buffers/cache:     230852     286018
+Swap:        32767          0      32767	
+Tue Sep 25 01:40:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     475633      41236          0       1510     242693
+-/+ buffers/cache:     231429     285441
+Swap:        32767          0      32767	
+Tue Sep 25 01:41:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486104      30766          0       1510     243600
+-/+ buffers/cache:     240993     275877
+Swap:        32767          0      32767	
+Tue Sep 25 01:42:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     496412      20458          0       1510     244400
+-/+ buffers/cache:     250500     266370
+Swap:        32767          0      32767	
+Tue Sep 25 01:43:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     493025      23845          0       1511     244971
+-/+ buffers/cache:     246543     270327
+Swap:        32767          0      32767	
+Tue Sep 25 01:44:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     492611      24259          0       1511     245727
+-/+ buffers/cache:     245372     271498
+Swap:        32767          0      32767	
+Tue Sep 25 01:45:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     492279      24591          0       1511     246969
+-/+ buffers/cache:     243798     273072
+Swap:        32767          0      32767	
+Tue Sep 25 01:46:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490757      26113          0       1511     248419
+-/+ buffers/cache:     240827     276043
+Swap:        32767          0      32767	
+Tue Sep 25 01:47:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     492485      24385          0       1511     250233
+-/+ buffers/cache:     240741     276129
+Swap:        32767          0      32767	
+Tue Sep 25 01:48:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     492229      24640          0       1511     251794
+-/+ buffers/cache:     238923     277947
+Swap:        32767          0      32767	
+Tue Sep 25 01:49:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     492972      23898          0       1511     253121
+-/+ buffers/cache:     238339     278531
+Swap:        32767          0      32767	
+Tue Sep 25 01:50:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     492449      24421          0       1511     253621
+-/+ buffers/cache:     237316     279554
+Swap:        32767          0      32767	
+Tue Sep 25 01:51:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     491816      25054          0       1511     253520
+-/+ buffers/cache:     236784     280086
+Swap:        32767          0      32767	
+Tue Sep 25 01:52:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486825      30045          0       1511     248980
+-/+ buffers/cache:     236333     280537
+Swap:        32767          0      32767	
+Tue Sep 25 01:53:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     487761      29109          0       1511     251036
+-/+ buffers/cache:     235213     281657
+Swap:        32767          0      32767	
+Tue Sep 25 01:54:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     488388      28482          0       1511     252202
+-/+ buffers/cache:     234673     282197
+Swap:        32767          0      32767	
+Tue Sep 25 01:55:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     489512      27358          0       1511     253594
+-/+ buffers/cache:     234405     282465
+Swap:        32767          0      32767	
+Tue Sep 25 01:56:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     489140      27730          0       1511     253616
+-/+ buffers/cache:     234012     282858
+Swap:        32767          0      32767	
+Tue Sep 25 01:57:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     489559      27311          0       1511     254478
+-/+ buffers/cache:     233568     283302
+Swap:        32767          0      32767	
+Tue Sep 25 01:58:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     485301      31569          0       1511     250719
+-/+ buffers/cache:     233069     283801
+Swap:        32767          0      32767	
+Tue Sep 25 01:59:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     485803      31067          0       1511     251860
+-/+ buffers/cache:     232431     284439
+Swap:        32767          0      32767	
+Tue Sep 25 02:00:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     486063      30807          0       1511     253056
+-/+ buffers/cache:     231494     285376
+Swap:        32767          0      32767	
+Tue Sep 25 02:01:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     488500      28370          0       1511     255098
+-/+ buffers/cache:     231890     284980
+Swap:        32767          0      32767	
+Tue Sep 25 02:02:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     485963      30907          0       1511     252477
+-/+ buffers/cache:     231974     284896
+Swap:        32767          0      32767	
+Tue Sep 25 02:03:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     487020      29850          0       1511     254527
+-/+ buffers/cache:     230981     285889
+Swap:        32767          0      32767	
+Tue Sep 25 02:04:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     489881      26989          0       1511     257718
+-/+ buffers/cache:     230651     286219
+Swap:        32767          0      32767	
+Tue Sep 25 02:05:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     491819      25051          0       1511     259754
+-/+ buffers/cache:     230553     286317
+Swap:        32767          0      32767	
+Tue Sep 25 02:06:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     489309      27561          0       1511     256716
+-/+ buffers/cache:     231080     285790
+Swap:        32767          0      32767	
+Tue Sep 25 02:07:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     490102      26768          0       1511     256674
+-/+ buffers/cache:     231916     284954
+Swap:        32767          0      32767	
+Tue Sep 25 02:08:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     491726      25144          0       1511     258162
+-/+ buffers/cache:     232052     284818
+Swap:        32767          0      32767	
+Tue Sep 25 02:09:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     493734      23136          0       1511     260583
+-/+ buffers/cache:     231639     285231
+Swap:        32767          0      32767	
+Tue Sep 25 02:10:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     488853      28017          0       1511     256845
+-/+ buffers/cache:     230496     286374
+Swap:        32767          0      32767	
+Tue Sep 25 02:11:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     445242      71628          0       1511     212246
+-/+ buffers/cache:     231484     285386
+Swap:        32767          0      32767	
+Tue Sep 25 02:12:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     448778      68092          0       1511     213894
+-/+ buffers/cache:     233371     283499
+Swap:        32767          0      32767	
+Tue Sep 25 02:13:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     446888      69982          0       1511     210370
+-/+ buffers/cache:     235006     281864
+Swap:        32767          0      32767	
+Tue Sep 25 02:14:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     446117      70753          0       1511     211906
+-/+ buffers/cache:     232698     284172
+Swap:        32767          0      32767	
+Tue Sep 25 02:15:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     447176      69694          0       1511     213875
+-/+ buffers/cache:     231789     285081
+Swap:        32767          0      32767	
+Tue Sep 25 02:16:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     442926      73944          0       1511     210347
+-/+ buffers/cache:     231066     285804
+Swap:        32767          0      32767	
+Tue Sep 25 02:17:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     444199      72671          0       1511     211870
+-/+ buffers/cache:     230816     286054
+Swap:        32767          0      32767	
+Tue Sep 25 02:18:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     446242      70628          0       1511     214325
+-/+ buffers/cache:     230404     286466
+Swap:        32767          0      32767	
+Tue Sep 25 02:19:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     443138      73732          0       1511     211241
+-/+ buffers/cache:     230385     286485
+Swap:        32767          0      32767	
+Tue Sep 25 02:20:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     444906      71964          0       1511     213211
+-/+ buffers/cache:     230182     286688
+Swap:        32767          0      32767	
+Tue Sep 25 02:21:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     446480      70390          0       1511     214900
+-/+ buffers/cache:     230068     286802
+Swap:        32767          0      32767	
+Tue Sep 25 02:22:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     447050      69820          0       1511     215795
+-/+ buffers/cache:     229743     287127
+Swap:        32767          0      32767	
+Tue Sep 25 02:23:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     447095      69775          0       1511     215892
+-/+ buffers/cache:     229691     287179
+Swap:        32767          0      32767	
+Tue Sep 25 02:24:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     447072      69798          0       1512     216108
+-/+ buffers/cache:     229451     287419
+Swap:        32767          0      32767	
+Tue Sep 25 02:25:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     446920      69950          0       1512     216203
+-/+ buffers/cache:     229204     287665
+Swap:        32767          0      32767	
+Tue Sep 25 02:26:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     446519      70351          0       1512     216005
+-/+ buffers/cache:     229002     287868
+Swap:        32767          0      32767	
+Tue Sep 25 02:27:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     444467      72403          0       1512     216028
+-/+ buffers/cache:     226926     289944
+Swap:        32767          0      32767	
+Tue Sep 25 02:28:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     444235      72635          0       1512     216081
+-/+ buffers/cache:     226642     290228
+Swap:        32767          0      32767	
+Tue Sep 25 02:29:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     444255      72615          0       1512     216135
+-/+ buffers/cache:     226608     290262
+Swap:        32767          0      32767	
+Tue Sep 25 02:30:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     444092      72777          0       1512     216061
+-/+ buffers/cache:     226519     290351
+Swap:        32767          0      32767	
+Tue Sep 25 02:31:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     444427      72443          0       1512     215991
+-/+ buffers/cache:     226923     289947
+Swap:        32767          0      32767	
+Tue Sep 25 02:32:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     447033      69837          0       1512     216084
+-/+ buffers/cache:     229437     287433
+Swap:        32767          0      32767	
+Tue Sep 25 02:33:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     447042      69828          0       1512     216221
+-/+ buffers/cache:     229308     287562
+Swap:        32767          0      32767	
+Tue Sep 25 02:34:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     446144      70725          0       1512     216156
+-/+ buffers/cache:     228476     288394
+Swap:        32767          0      32767	
+Tue Sep 25 02:35:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     445701      71169          0       1512     216332
+-/+ buffers/cache:     227856     289014
+Swap:        32767          0      32767	
+Tue Sep 25 02:36:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     447303      69567          0       1512     216142
+-/+ buffers/cache:     229649     287221
+Swap:        32767          0      32767	
+Tue Sep 25 02:37:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453818      63052          0       1512     216118
+-/+ buffers/cache:     236187     280683
+Swap:        32767          0      32767	
+Tue Sep 25 02:38:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     450697      66173          0       1512     216298
+-/+ buffers/cache:     232886     283984
+Swap:        32767          0      32767	
+Tue Sep 25 02:39:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453201      63669          0       1512     216433
+-/+ buffers/cache:     235255     281615
+Swap:        32767          0      32767	
+Tue Sep 25 02:40:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453712      63158          0       1512     216408
+-/+ buffers/cache:     235792     281078
+Swap:        32767          0      32767	
+Tue Sep 25 02:41:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     451186      65684          0       1512     217278
+-/+ buffers/cache:     232395     284475
+Swap:        32767          0      32767	
+Tue Sep 25 02:42:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454120      62750          0       1512     220479
+-/+ buffers/cache:     232128     284742
+Swap:        32767          0      32767	
+Tue Sep 25 02:43:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     457381      59489          0       1512     223611
+-/+ buffers/cache:     232256     284614
+Swap:        32767          0      32767	
+Tue Sep 25 02:44:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460746      56124          0       1512     227545
+-/+ buffers/cache:     231688     285182
+Swap:        32767          0      32767	
+Tue Sep 25 02:45:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     463529      53341          0       1512     230605
+-/+ buffers/cache:     231411     285459
+Swap:        32767          0      32767	
+Tue Sep 25 02:46:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     463289      53581          0       1512     230610
+-/+ buffers/cache:     231166     285704
+Swap:        32767          0      32767	
+Tue Sep 25 02:47:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     462070      54800          0       1512     230579
+-/+ buffers/cache:     229978     286892
+Swap:        32767          0      32767	
+Tue Sep 25 02:48:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     461860      55010          0       1512     230758
+-/+ buffers/cache:     229589     287281
+Swap:        32767          0      32767	
+Tue Sep 25 02:49:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     461731      55139          0       1512     230769
+-/+ buffers/cache:     229449     287421
+Swap:        32767          0      32767	
+Tue Sep 25 02:50:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     461092      55777          0       1512     230659
+-/+ buffers/cache:     228921     287949
+Swap:        32767          0      32767	
+Tue Sep 25 02:51:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460411      56459          0       1512     230583
+-/+ buffers/cache:     228315     288555
+Swap:        32767          0      32767	
+Tue Sep 25 02:52:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460647      56223          0       1512     230678
+-/+ buffers/cache:     228456     288414
+Swap:        32767          0      32767	
+Tue Sep 25 02:53:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460202      56668          0       1512     230734
+-/+ buffers/cache:     227956     288914
+Swap:        32767          0      32767	
+Tue Sep 25 02:54:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460198      56672          0       1512     230788
+-/+ buffers/cache:     227896     288974
+Swap:        32767          0      32767	
+Tue Sep 25 02:55:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459941      56929          0       1512     230800
+-/+ buffers/cache:     227628     289242
+Swap:        32767          0      32767	
+Tue Sep 25 02:56:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459202      57668          0       1512     230335
+-/+ buffers/cache:     227354     289516
+Swap:        32767          0      32767	
+Tue Sep 25 02:57:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     452678      64192          0       1512     224037
+-/+ buffers/cache:     227128     289742
+Swap:        32767          0      32767	
+Tue Sep 25 02:58:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456007      60863          0       1512     227637
+-/+ buffers/cache:     226857     290013
+Swap:        32767          0      32767	
+Tue Sep 25 02:59:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459378      57492          0       1512     230851
+-/+ buffers/cache:     227014     289856
+Swap:        32767          0      32767	
+Tue Sep 25 03:00:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459111      57759          0       1512     230694
+-/+ buffers/cache:     226904     289966
+Swap:        32767          0      32767	
+Tue Sep 25 03:01:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     458924      57946          0       1512     230624
+-/+ buffers/cache:     226787     290083
+Swap:        32767          0      32767	
+Tue Sep 25 03:02:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459254      57616          0       1512     230678
+-/+ buffers/cache:     227063     289807
+Swap:        32767          0      32767	
+Tue Sep 25 03:03:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459213      57657          0       1512     230812
+-/+ buffers/cache:     226888     289982
+Swap:        32767          0      32767	
+Tue Sep 25 03:04:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459197      57673          0       1512     230911
+-/+ buffers/cache:     226772     290098
+Swap:        32767          0      32767	
+Tue Sep 25 03:05:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456190      60680          0       1512     230927
+-/+ buffers/cache:     223749     293121
+Swap:        32767          0      32767	
+Tue Sep 25 03:06:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455413      61457          0       1512     230747
+-/+ buffers/cache:     223154     293716
+Swap:        32767          0      32767	
+Tue Sep 25 03:07:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454610      62260          0       1512     230800
+-/+ buffers/cache:     222297     294573
+Swap:        32767          0      32767	
+Tue Sep 25 03:08:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454988      61882          0       1512     231152
+-/+ buffers/cache:     222323     294547
+Swap:        32767          0      32767	
+Tue Sep 25 03:09:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454684      62186          0       1512     231164
+-/+ buffers/cache:     222007     294863
+Swap:        32767          0      32767	
+Tue Sep 25 03:10:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454329      62541          0       1512     231111
+-/+ buffers/cache:     221705     295165
+Swap:        32767          0      32767	
+Tue Sep 25 03:11:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454529      62341          0       1512     231043
+-/+ buffers/cache:     221973     294897
+Swap:        32767          0      32767	
+Tue Sep 25 03:12:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454534      62336          0       1512     231094
+-/+ buffers/cache:     221927     294943
+Swap:        32767          0      32767	
+Tue Sep 25 03:13:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454389      62481          0       1512     231184
+-/+ buffers/cache:     221692     295178
+Swap:        32767          0      32767	
+Tue Sep 25 03:14:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454271      62599          0       1512     231257
+-/+ buffers/cache:     221501     295369
+Swap:        32767          0      32767	
+Tue Sep 25 03:15:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454284      62586          0       1513     231302
+-/+ buffers/cache:     221468     295402
+Swap:        32767          0      32767	
+Tue Sep 25 03:16:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454005      62865          0       1513     231151
+-/+ buffers/cache:     221340     295529
+Swap:        32767          0      32767	
+Tue Sep 25 03:17:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453514      63356          0       1513     231199
+-/+ buffers/cache:     220801     296069
+Swap:        32767          0      32767	
+Tue Sep 25 03:18:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453698      63172          0       1513     231253
+-/+ buffers/cache:     220931     295939
+Swap:        32767          0      32767	
+Tue Sep 25 03:19:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454017      62853          0       1513     231350
+-/+ buffers/cache:     221153     295717
+Swap:        32767          0      32767	
+Tue Sep 25 03:20:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453899      62971          0       1513     231282
+-/+ buffers/cache:     221103     295767
+Swap:        32767          0      32767	
+Tue Sep 25 03:21:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453777      63093          0       1513     231249
+-/+ buffers/cache:     221014     295856
+Swap:        32767          0      32767	
+Tue Sep 25 03:22:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453696      63174          0       1513     231179
+-/+ buffers/cache:     221004     295866
+Swap:        32767          0      32767	
+Tue Sep 25 03:23:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453940      62929          0       1513     231355
+-/+ buffers/cache:     221072     295798
+Swap:        32767          0      32767	
+Tue Sep 25 03:24:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454174      62696          0       1513     231368
+-/+ buffers/cache:     221293     295577
+Swap:        32767          0      32767	
+Tue Sep 25 03:25:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454091      62779          0       1513     231458
+-/+ buffers/cache:     221119     295751
+Swap:        32767          0      32767	
+Tue Sep 25 03:26:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453933      62937          0       1513     231305
+-/+ buffers/cache:     221114     295756
+Swap:        32767          0      32767	
+Tue Sep 25 03:27:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453914      62956          0       1513     231318
+-/+ buffers/cache:     221082     295788
+Swap:        32767          0      32767	
+Tue Sep 25 03:28:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453940      62930          0       1513     231371
+-/+ buffers/cache:     221055     295815
+Swap:        32767          0      32767	
+Tue Sep 25 03:29:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454008      62862          0       1513     231465
+-/+ buffers/cache:     221029     295841
+Swap:        32767          0      32767	
+Tue Sep 25 03:30:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454149      62720          0       1513     231391
+-/+ buffers/cache:     221245     295625
+Swap:        32767          0      32767	
+Tue Sep 25 03:31:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453979      62891          0       1513     231322
+-/+ buffers/cache:     221144     295726
+Swap:        32767          0      32767	
+Tue Sep 25 03:32:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454020      62850          0       1513     231416
+-/+ buffers/cache:     221090     295780
+Swap:        32767          0      32767	
+Tue Sep 25 03:33:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453890      62980          0       1513     231470
+-/+ buffers/cache:     220906     295964
+Swap:        32767          0      32767	
+Tue Sep 25 03:34:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453674      63196          0       1513     231474
+-/+ buffers/cache:     220686     296184
+Swap:        32767          0      32767	
+Tue Sep 25 03:35:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453606      63264          0       1513     231569
+-/+ buffers/cache:     220523     296347
+Swap:        32767          0      32767	
+Tue Sep 25 03:36:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453445      63425          0       1513     231418
+-/+ buffers/cache:     220513     296357
+Swap:        32767          0      32767	
+Tue Sep 25 03:37:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453527      63343          0       1513     231389
+-/+ buffers/cache:     220625     296245
+Swap:        32767          0      32767	
+Tue Sep 25 03:38:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453536      63334          0       1513     231493
+-/+ buffers/cache:     220529     296341
+Swap:        32767          0      32767	
+Tue Sep 25 03:39:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453512      63358          0       1513     231614
+-/+ buffers/cache:     220384     296486
+Swap:        32767          0      32767	
+Tue Sep 25 03:40:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453389      63481          0       1513     231462
+-/+ buffers/cache:     220413     296457
+Swap:        32767          0      32767	
+Tue Sep 25 03:41:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453161      63709          0       1513     231392
+-/+ buffers/cache:     220255     296615
+Swap:        32767          0      32767	
+Tue Sep 25 03:42:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453122      63748          0       1513     231483
+-/+ buffers/cache:     220125     296745
+Swap:        32767          0      32767	
+Tue Sep 25 03:43:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     452988      63882          0       1513     231494
+-/+ buffers/cache:     219980     296890
+Swap:        32767          0      32767	
+Tue Sep 25 03:44:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453194      63676          0       1513     231588
+-/+ buffers/cache:     220092     296778
+Swap:        32767          0      32767	
+Tue Sep 25 03:45:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453529      63341          0       1513     231699
+-/+ buffers/cache:     220316     296554
+Swap:        32767          0      32767	
+Tue Sep 25 03:46:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453392      63478          0       1513     231535
+-/+ buffers/cache:     220343     296527
+Swap:        32767          0      32767	
+Tue Sep 25 03:47:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453353      63517          0       1513     231484
+-/+ buffers/cache:     220355     296515
+Swap:        32767          0      32767	
+Tue Sep 25 03:48:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453382      63488          0       1513     231619
+-/+ buffers/cache:     220248     296622
+Swap:        32767          0      32767	
+Tue Sep 25 03:49:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453476      63394          0       1513     231755
+-/+ buffers/cache:     220207     296663
+Swap:        32767          0      32767	
+Tue Sep 25 03:50:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453281      63589          0       1513     231604
+-/+ buffers/cache:     220163     296707
+Swap:        32767          0      32767	
+Tue Sep 25 03:51:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453179      63691          0       1513     231529
+-/+ buffers/cache:     220136     296734
+Swap:        32767          0      32767	
+Tue Sep 25 03:52:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453320      63550          0       1513     231639
+-/+ buffers/cache:     220167     296703
+Swap:        32767          0      32767	
+Tue Sep 25 03:53:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453259      63611          0       1513     231676
+-/+ buffers/cache:     220069     296801
+Swap:        32767          0      32767	
+Tue Sep 25 03:54:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453266      63604          0       1513     231689
+-/+ buffers/cache:     220063     296807
+Swap:        32767          0      32767	
+Tue Sep 25 03:55:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453391      63479          0       1513     231820
+-/+ buffers/cache:     220057     296813
+Swap:        32767          0      32767	
+Tue Sep 25 03:56:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453221      63649          0       1513     231642
+-/+ buffers/cache:     220065     296805
+Swap:        32767          0      32767	
+Tue Sep 25 03:57:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453324      63546          0       1513     231695
+-/+ buffers/cache:     220115     296755
+Swap:        32767          0      32767	
+Tue Sep 25 03:58:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453444      63426          0       1513     231750
+-/+ buffers/cache:     220179     296691
+Swap:        32767          0      32767	
+Tue Sep 25 03:59:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453582      63287          0       1513     231805
+-/+ buffers/cache:     220263     296607
+Swap:        32767          0      32767	
+Tue Sep 25 04:00:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453266      63604          0       1513     231777
+-/+ buffers/cache:     219975     296895
+Swap:        32767          0      32767	
+Tue Sep 25 04:01:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453265      63605          0       1513     231708
+-/+ buffers/cache:     220043     296827
+Swap:        32767          0      32767	
+Tue Sep 25 04:02:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454103      62767          0       1513     231843
+-/+ buffers/cache:     220747     296123
+Swap:        32767          0      32767	
+Tue Sep 25 04:03:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454207      62663          0       1513     231812
+-/+ buffers/cache:     220881     295989
+Swap:        32767          0      32767	
+Tue Sep 25 04:04:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454329      62541          0       1513     231872
+-/+ buffers/cache:     220943     295927
+Swap:        32767          0      32767	
+Tue Sep 25 04:05:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454686      62184          0       1513     231967
+-/+ buffers/cache:     221205     295665
+Swap:        32767          0      32767	
+Tue Sep 25 04:06:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454340      62530          0       1513     231776
+-/+ buffers/cache:     221051     295819
+Swap:        32767          0      32767	
+Tue Sep 25 04:07:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454839      62031          0       1513     231825
+-/+ buffers/cache:     221500     295370
+Swap:        32767          0      32767	
+Tue Sep 25 04:08:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454502      62368          0       1513     231877
+-/+ buffers/cache:     221111     295759
+Swap:        32767          0      32767	
+Tue Sep 25 04:09:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455016      61854          0       1513     232054
+-/+ buffers/cache:     221448     295422
+Swap:        32767          0      32767	
+Tue Sep 25 04:10:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455126      61744          0       1513     231919
+-/+ buffers/cache:     221694     295176
+Swap:        32767          0      32767	
+Tue Sep 25 04:11:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454208      62662          0       1513     231892
+-/+ buffers/cache:     220802     296068
+Swap:        32767          0      32767	
+Tue Sep 25 04:12:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454419      62451          0       1513     231902
+-/+ buffers/cache:     221003     295867
+Swap:        32767          0      32767	
+Tue Sep 25 04:13:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454461      62409          0       1513     232007
+-/+ buffers/cache:     220940     295930
+Swap:        32767          0      32767	
+Tue Sep 25 04:14:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454488      62382          0       1513     231978
+-/+ buffers/cache:     220995     295875
+Swap:        32767          0      32767	
+Tue Sep 25 04:15:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454617      62253          0       1513     232113
+-/+ buffers/cache:     220989     295881
+Swap:        32767          0      32767	
+Tue Sep 25 04:16:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454505      62365          0       1513     231959
+-/+ buffers/cache:     221032     295838
+Swap:        32767          0      32767	
+Tue Sep 25 04:17:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454303      62567          0       1513     231848
+-/+ buffers/cache:     220941     295929
+Swap:        32767          0      32767	
+Tue Sep 25 04:18:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454364      62506          0       1513     232026
+-/+ buffers/cache:     220824     296046
+Swap:        32767          0      32767	
+Tue Sep 25 04:19:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454226      62644          0       1513     232135
+-/+ buffers/cache:     220576     296294
+Swap:        32767          0      32767	
+Tue Sep 25 04:20:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454611      62259          0       1513     232075
+-/+ buffers/cache:     221021     295849
+Swap:        32767          0      32767	
+Tue Sep 25 04:21:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454676      62194          0       1513     232010
+-/+ buffers/cache:     221152     295718
+Swap:        32767          0      32767	
+Tue Sep 25 04:22:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454565      62305          0       1513     232104
+-/+ buffers/cache:     220947     295923
+Swap:        32767          0      32767	
+Tue Sep 25 04:23:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454465      62405          0       1513     232075
+-/+ buffers/cache:     220876     295994
+Swap:        32767          0      32767	
+Tue Sep 25 04:24:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454363      62507          0       1513     232082
+-/+ buffers/cache:     220767     296103
+Swap:        32767          0      32767	
+Tue Sep 25 04:25:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454599      62271          0       1513     232258
+-/+ buffers/cache:     220827     296043
+Swap:        32767          0      32767	
+Tue Sep 25 04:26:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454241      62629          0       1513     232025
+-/+ buffers/cache:     220702     296168
+Swap:        32767          0      32767	
+Tue Sep 25 04:27:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454176      62694          0       1513     232096
+-/+ buffers/cache:     220566     296304
+Swap:        32767          0      32767	
+Tue Sep 25 04:28:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454003      62867          0       1513     232266
+-/+ buffers/cache:     220223     296647
+Swap:        32767          0      32767	
+Tue Sep 25 04:29:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453901      62969          0       1513     232260
+-/+ buffers/cache:     220126     296744
+Swap:        32767          0      32767	
+Tue Sep 25 04:30:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453639      63231          0       1513     232205
+-/+ buffers/cache:     219920     296950
+Swap:        32767          0      32767	
+Tue Sep 25 04:31:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454054      62816          0       1513     232110
+-/+ buffers/cache:     220430     296440
+Swap:        32767          0      32767	
+Tue Sep 25 04:32:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454415      62455          0       1513     232179
+-/+ buffers/cache:     220722     296148
+Swap:        32767          0      32767	
+Tue Sep 25 04:33:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454421      62449          0       1513     232281
+-/+ buffers/cache:     220625     296245
+Swap:        32767          0      32767	
+Tue Sep 25 04:34:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454194      62676          0       1513     232299
+-/+ buffers/cache:     220380     296490
+Swap:        32767          0      32767	
+Tue Sep 25 04:35:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454695      62175          0       1513     232476
+-/+ buffers/cache:     220704     296166
+Swap:        32767          0      32767	
+Tue Sep 25 04:36:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453904      62966          0       1513     232292
+-/+ buffers/cache:     220098     296772
+Swap:        32767          0      32767	
+Tue Sep 25 04:37:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453990      62879          0       1513     232218
+-/+ buffers/cache:     220258     296611
+Swap:        32767          0      32767	
+Tue Sep 25 04:38:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455530      61340          0       1513     233046
+-/+ buffers/cache:     220969     295901
+Swap:        32767          0      32767	
+Tue Sep 25 04:39:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455370      61500          0       1513     233171
+-/+ buffers/cache:     220684     296186
+Swap:        32767          0      32767	
+Tue Sep 25 04:40:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454904      61966          0       1513     233104
+-/+ buffers/cache:     220287     296583
+Swap:        32767          0      32767	
+Tue Sep 25 04:41:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456218      60652          0       1513     233034
+-/+ buffers/cache:     221669     295201
+Swap:        32767          0      32767	
+Tue Sep 25 04:42:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456672      60198          0       1513     233050
+-/+ buffers/cache:     222108     294762
+Swap:        32767          0      32767	
+Tue Sep 25 04:43:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456801      60069          0       1513     233186
+-/+ buffers/cache:     222100     294770
+Swap:        32767          0      32767	
+Tue Sep 25 04:44:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460667      56203          0       1513     233159
+-/+ buffers/cache:     225993     290877
+Swap:        32767          0      32767	
+Tue Sep 25 04:45:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     462319      54551          0       1513     233268
+-/+ buffers/cache:     227536     289334
+Swap:        32767          0      32767	
+Tue Sep 25 04:46:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     461327      55543          0       1513     233043
+-/+ buffers/cache:     226770     290100
+Swap:        32767          0      32767	
+Tue Sep 25 04:47:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     461377      55493          0       1513     233097
+-/+ buffers/cache:     226766     290104
+Swap:        32767          0      32767	
+Tue Sep 25 04:48:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460695      56175          0       1513     233191
+-/+ buffers/cache:     225990     290880
+Swap:        32767          0      32767	
+Tue Sep 25 04:49:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460354      56516          0       1513     233281
+-/+ buffers/cache:     225559     291311
+Swap:        32767          0      32767	
+Tue Sep 25 04:50:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460456      56413          0       1513     233173
+-/+ buffers/cache:     225770     291100
+Swap:        32767          0      32767	
+Tue Sep 25 04:51:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460353      56517          0       1513     233066
+-/+ buffers/cache:     225773     291097
+Swap:        32767          0      32767	
+Tue Sep 25 04:52:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460709      56161          0       1513     233176
+-/+ buffers/cache:     226019     290851
+Swap:        32767          0      32767	
+Tue Sep 25 04:53:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460570      56300          0       1513     233259
+-/+ buffers/cache:     225797     291073
+Swap:        32767          0      32767	
+Tue Sep 25 04:54:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460561      56309          0       1513     233250
+-/+ buffers/cache:     225797     291073
+Swap:        32767          0      32767	
+Tue Sep 25 04:55:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     460399      56471          0       1513     233404
+-/+ buffers/cache:     225480     291390
+Swap:        32767          0      32767	
+Tue Sep 25 04:56:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459779      57091          0       1513     233262
+-/+ buffers/cache:     225002     291868
+Swap:        32767          0      32767	
+Tue Sep 25 04:57:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459524      57346          0       1513     233285
+-/+ buffers/cache:     224725     292145
+Swap:        32767          0      32767	
+Tue Sep 25 04:58:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459504      57366          0       1513     233298
+-/+ buffers/cache:     224692     292178
+Swap:        32767          0      32767	
+Tue Sep 25 04:59:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459794      57076          0       1513     233433
+-/+ buffers/cache:     224846     292023
+Swap:        32767          0      32767	
+Tue Sep 25 05:00:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459682      57187          0       1513     233282
+-/+ buffers/cache:     224886     291984
+Swap:        32767          0      32767	
+Tue Sep 25 05:01:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459634      57236          0       1513     233208
+-/+ buffers/cache:     224912     291958
+Swap:        32767          0      32767	
+Tue Sep 25 05:02:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     457381      59489          0       1513     233301
+-/+ buffers/cache:     222565     294304
+Swap:        32767          0      32767	
+Tue Sep 25 05:03:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     457413      59457          0       1513     233368
+-/+ buffers/cache:     222531     294339
+Swap:        32767          0      32767	
+Tue Sep 25 05:04:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     457340      59530          0       1513     233394
+-/+ buffers/cache:     222432     294438
+Swap:        32767          0      32767	
+Tue Sep 25 05:05:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456913      59957          0       1513     233617
+-/+ buffers/cache:     221782     295088
+Swap:        32767          0      32767	
+Tue Sep 25 05:06:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456679      60191          0       1513     233427
+-/+ buffers/cache:     221738     295132
+Swap:        32767          0      32767	
+Tue Sep 25 05:07:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456486      60384          0       1513     233488
+-/+ buffers/cache:     221484     295386
+Swap:        32767          0      32767	
+Tue Sep 25 05:08:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455980      60890          0       1513     233557
+-/+ buffers/cache:     220908     295962
+Swap:        32767          0      32767	
+Tue Sep 25 05:09:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455994      60876          0       1513     233706
+-/+ buffers/cache:     220774     296096
+Swap:        32767          0      32767	
+Tue Sep 25 05:10:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456207      60663          0       1514     233614
+-/+ buffers/cache:     221079     295791
+Swap:        32767          0      32767	
+Tue Sep 25 05:11:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455839      61031          0       1514     233634
+-/+ buffers/cache:     220690     296180
+Swap:        32767          0      32767	
+Tue Sep 25 05:12:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455271      61599          0       1514     233572
+-/+ buffers/cache:     220184     296685
+Swap:        32767          0      32767	
+Tue Sep 25 05:13:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455871      60999          0       1514     233674
+-/+ buffers/cache:     220683     296187
+Swap:        32767          0      32767	
+Tue Sep 25 05:14:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456020      60850          0       1514     233644
+-/+ buffers/cache:     220861     296009
+Swap:        32767          0      32767	
+Tue Sep 25 05:15:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456274      60596          0       1514     233828
+-/+ buffers/cache:     220931     295939
+Swap:        32767          0      32767	
+Tue Sep 25 05:16:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455595      61275          0       1514     233563
+-/+ buffers/cache:     220517     296353
+Swap:        32767          0      32767	
+Tue Sep 25 05:17:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455509      61361          0       1514     233663
+-/+ buffers/cache:     220332     296538
+Swap:        32767          0      32767	
+Tue Sep 25 05:18:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455647      61223          0       1514     233716
+-/+ buffers/cache:     220416     296454
+Swap:        32767          0      32767	
+Tue Sep 25 05:19:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456067      60803          0       1514     233936
+-/+ buffers/cache:     220616     296254
+Swap:        32767          0      32767	
+Tue Sep 25 05:20:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455453      61417          0       1514     233801
+-/+ buffers/cache:     220138     296732
+Swap:        32767          0      32767	
+Tue Sep 25 05:21:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455834      61036          0       1514     233611
+-/+ buffers/cache:     220709     296161
+Swap:        32767          0      32767	
+Tue Sep 25 05:22:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454883      61987          0       1514     233707
+-/+ buffers/cache:     219661     297209
+Swap:        32767          0      32767	
+Tue Sep 25 05:23:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     454686      62184          0       1514     233848
+-/+ buffers/cache:     219323     297546
+Swap:        32767          0      32767	
+Tue Sep 25 05:24:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     453946      62924          0       1514     233849
+-/+ buffers/cache:     218583     298287
+Swap:        32767          0      32767	
+Tue Sep 25 05:25:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455092      61778          0       1514     234975
+-/+ buffers/cache:     218603     298267
+Swap:        32767          0      32767	
+Tue Sep 25 05:26:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455019      61851          0       1514     235021
+-/+ buffers/cache:     218483     298387
+Swap:        32767          0      32767	
+Tue Sep 25 05:27:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455448      61422          0       1514     235366
+-/+ buffers/cache:     218568     298302
+Swap:        32767          0      32767	
+Tue Sep 25 05:28:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456738      60132          0       1514     235505
+-/+ buffers/cache:     219718     297152
+Swap:        32767          0      32767	
+Tue Sep 25 05:29:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459218      57652          0       1514     236027
+-/+ buffers/cache:     221676     295194
+Swap:        32767          0      32767	
+Tue Sep 25 05:30:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456061      60809          0       1514     235283
+-/+ buffers/cache:     219263     297606
+Swap:        32767          0      32767	
+Tue Sep 25 05:31:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     455563      61307          0       1514     234941
+-/+ buffers/cache:     219107     297763
+Swap:        32767          0      32767	
+Tue Sep 25 05:32:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456130      60740          0       1514     235566
+-/+ buffers/cache:     219050     297820
+Swap:        32767          0      32767	
+Tue Sep 25 05:33:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456207      60663          0       1514     235662
+-/+ buffers/cache:     219030     297840
+Swap:        32767          0      32767	
+Tue Sep 25 05:34:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456267      60603          0       1514     235674
+-/+ buffers/cache:     219078     297792
+Swap:        32767          0      32767	
+Tue Sep 25 05:35:05 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456753      60117          0       1514     235853
+-/+ buffers/cache:     219385     297485
+Swap:        32767          0      32767	
+Tue Sep 25 05:36:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456599      60271          0       1514     235628
+-/+ buffers/cache:     219456     297414
+Swap:        32767          0      32767	
+Tue Sep 25 05:37:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456467      60403          0       1514     235616
+-/+ buffers/cache:     219336     297534
+Swap:        32767          0      32767	
+Tue Sep 25 05:38:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456644      60226          0       1514     235715
+-/+ buffers/cache:     219415     297455
+Swap:        32767          0      32767	
+Tue Sep 25 05:39:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456819      60051          0       1514     235854
+-/+ buffers/cache:     219449     297421
+Swap:        32767          0      32767	
+Tue Sep 25 05:40:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456448      60422          0       1514     235752
+-/+ buffers/cache:     219181     297689
+Swap:        32767          0      32767	
+Tue Sep 25 05:41:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456396      60474          0       1514     235650
+-/+ buffers/cache:     219232     297638
+Swap:        32767          0      32767	
+Tue Sep 25 05:42:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456664      60206          0       1514     235747
+-/+ buffers/cache:     219402     297468
+Swap:        32767          0      32767	
+Tue Sep 25 05:43:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456576      60294          0       1514     235797
+-/+ buffers/cache:     219264     297606
+Swap:        32767          0      32767	
+Tue Sep 25 05:44:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     456797      60073          0       1514     235811
+-/+ buffers/cache:     219471     297399
+Swap:        32767          0      32767	
+Tue Sep 25 05:45:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     459023      57847          0       1514     235950
+-/+ buffers/cache:     221557     295313
+Swap:        32767          0      32767	
+Tue Sep 25 05:46:08 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     471497      45373          0       1514     235771
+-/+ buffers/cache:     234211     282659
+Swap:        32767          0      32767	
+Tue Sep 25 05:47:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     472170      44700          0       1514     235815
+-/+ buffers/cache:     234840     282030
+Swap:        32767          0      32767	
+Tue Sep 25 05:48:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     469497      47373          0       1514     235927
+-/+ buffers/cache:     232055     284815
+Swap:        32767          0      32767	
+Tue Sep 25 05:49:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     468787      48083          0       1514     236078
+-/+ buffers/cache:     231193     285677
+Swap:        32767          0      32767	
+Tue Sep 25 05:50:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     468348      48522          0       1514     235967
+-/+ buffers/cache:     230865     286005
+Swap:        32767          0      32767	
+Tue Sep 25 05:51:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     467054      49816          0       1514     236560
+-/+ buffers/cache:     228979     287891
+Swap:        32767          0      32767	
+Tue Sep 25 05:52:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     466818      50052          0       1514     236652
+-/+ buffers/cache:     228650     288219
+Swap:        32767          0      32767	
+Tue Sep 25 05:53:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     466669      50201          0       1514     236535
+-/+ buffers/cache:     228618     288252
+Swap:        32767          0      32767	
+Tue Sep 25 05:54:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     466448      50422          0       1514     236541
+-/+ buffers/cache:     228392     288478
+Swap:        32767          0      32767	
+Tue Sep 25 05:55:07 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     468995      47875          0       1514     237742
+-/+ buffers/cache:     229737     287133
+Swap:        32767          0      32767	
+Tue Sep 25 05:56:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     469338      47532          0       1514     238193
+-/+ buffers/cache:     229630     287240
+Swap:        32767          0      32767	
+Tue Sep 25 05:57:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     468679      48191          0       1515     239645
+-/+ buffers/cache:     227518     289352
+Swap:        32767          0      32767	
+Tue Sep 25 05:58:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     470597      46273          0       1515     241865
+-/+ buffers/cache:     227216     289654
+Swap:        32767          0      32767	
+Tue Sep 25 05:59:06 BST 2018              total       used       free     shared    buffers     cached
+Mem:        516870     469712      47158          0       1515     242017
+-/+ buffers/cache:     226180     290690
+Swap:        32767          0      32767	
